@@ -1,0 +1,26 @@
+<button class="card">
+    <div class="card-body">
+        <h5 class="card-title" style="height: 20%;"><span style="vertical-align: -webkit-baseline-middle;">{{title}}</span></h5>
+        <h6 class="card-subtitle" style="text-align: start;height: 20%;">{{subtitle}}</h6>
+        <p class="text-1" style="height: 25%;">
+            {{description}}
+        </p>
+        <div class="text-2" style="height: 35%;">
+            <p><b>Borradores en curso </b><span>{{borradores}}</span></p>
+            <p><b>Pago </b><span>{{pago}}</span></p>
+            <p><b>Plazo </b><span>{{plazo}}</span></p>
+            <p><b>Pre-requisito </b><span>{{prerequisito}}</span></p>
+        </div>
+    </div>
+    <div class="card-footer" style="background-color: transparent;border-top: 0;align-self: center;width: 100%;text-align: -webkit-center;height: 15%;padding: 0rem 1.25rem 0.75rem">
+        <vuce2-lib-button-primary *ngIf="isButton" [texto]='textButton'></vuce2-lib-button-primary>
+        <div *ngIf="!isButton" style="height: 100%;">
+            <p *ngIf="isComplete" style="background-color: #E6FBF1;width: 45%;color: green;height: 80%;">
+                <span style="vertical-align: -webkit-baseline-middle;">Completado</span>
+            </p>
+            <p *ngIf="isPendiente" style="background-color: #EEF2FA;;width: 45%;color: #2E5AAC;height: 80%;">
+                <span style="vertical-align: -webkit-baseline-middle;">Pendiente</span>
+            </p>
+        </div>
+    </div>
+</button>

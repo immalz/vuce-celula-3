@@ -1,0 +1,53 @@
+.page {
+    width: 100%;
+    height: calc(100vh - 58px);
+    display: flex;
+    background: #f8f8f8;
+    .sidebar {
+        width: 300px;
+        height: 100%;
+        background: #242424;
+    }
+    .content {
+        width: calc(100% - 300px);
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .filter_search {
+        height: 150px;
+    }
+
+    .accordion-button:not(.collapsed) {
+        color: #000;
+        background-color: #fff;
+        box-shadow: none;
+    }
+
+    .mat-raised-button {
+        width: 85px;
+        height: 45px;;
+    }
+    .mat-stroked-button {
+        width: 45px;
+        height: 45px;
+        border: 1px solid red;
+    }
+
+    .state {
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px 20px;
+    }
+
+    .state.assign {
+        background: #a7ebce;
+        color:#2f8445;
+    }
+    .state.no_assign {
+        background: #dbdbdb;
+        color:#6a6b6b;
+    }
+}

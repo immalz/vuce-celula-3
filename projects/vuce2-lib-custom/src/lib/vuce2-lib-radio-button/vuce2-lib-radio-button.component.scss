@@ -1,0 +1,30 @@
+@import './../assets/variables/variables.component.scss';
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+.espaciado {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+:host
+::ng-deep{
+
+  .mat-radio-outer-circle{
+    border-width: 2px;
+    border-style: solid;
+    border-color: map-get($vuce2-color-radio-button, color);
+  }
+  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-width: 2px;
+    border-style: solid;
+    border-color: map-get($vuce2-color-radio-button, color);
+  }
+  .mat-radio-button.mat-accent .mat-radio-inner-circle{
+    border-width: 2px;
+    border-style: solid;
+    border-color: map-get($vuce2-color-radio-button, color);
+    background-color: map-get($vuce2-color-radio-button, color);
+  }
+
+}

@@ -1,0 +1,30 @@
+<div class="mt-4" *ngFor="let item of tabs; first as isFirst">
+    <mat-accordion >
+        <mat-expansion-panel [expanded]="isFirst" (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header 
+            [collapsedHeight]="'100px'"
+            [expandedHeight]="'100px'">
+            <mat-panel-title > 
+                <div class="panelHeader">
+                    <h4>Datos de la Solicitud</h4>
+                    <p>Datos del Solicitante</p>
+                </div>
+            </mat-panel-title>
+            <mat-panel-title>
+                <div class="panelHeader">
+                    <h4>Resultado</h4>
+                    <p class="panelHeader__button">Aprobado</p>
+                </div>
+            </mat-panel-title>
+            <mat-panel-title>
+                <div class="panelHeader">
+                    <h4>Observaciones</h4>
+                </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <h5>Detalle</h5>
+          <p class="mt-5 mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora deleniti itaque, facilis eligendi velit debitis at tenetur maiores est excepturi! Alias, aut. Officia facilis quod voluptatem, saepe similique itaque beatae minus, soluta doloremque iste rerum omnis quidem quam. Quaerat pariatur voluptatibus velit, iste explicabo eligendi veritatis facere rem aspernatur quia perspiciatis sint nemo repellat vel id cumque dolores eveniet voluptas molestias commodi? Iusto corrupti sit molestiae. Sit pariatur rem error libero, corrupti in incidunt ea ab nemo, voluptatibus debitis. Aliquid perspiciatis vel quas harum deleniti debitis laboriosam accusantium eius quos beatae vitae voluptate exercitationem, fugit obcaecati blanditiis officia. Illo, quidem.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+</div>

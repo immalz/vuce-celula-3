@@ -1,0 +1,52 @@
+<div class="radio-state">
+  <div class="box-step" *ngFor="let step of tabList">
+    <ng-template [ngIf]="step.completed">
+      <div class="line-step line-step-success"></div>
+      <div class="step step-success">
+        <span>
+          {{ step.id }}
+        </span>
+        <p>{{ step.name }}</p>
+      </div>
+
+      <div class="line-step line-step-success"></div>
+    </ng-template>
+    <ng-template [ngIf]="step.active">
+      <div class="line-step line-step-progress"></div>
+      <div class="step step-progress">
+        <span>
+          {{ step.id }}
+        </span>
+        <p>{{ step.name }}</p>
+      </div>
+      <div class="line-step line-step-progress"></div>
+    </ng-template>
+
+    <ng-template [ngIf]="!step.completed && !step.active">
+      <div class="line-step line-step-pending"></div>
+      <div class="step step-pending">
+        <span>
+          {{ step.id }}
+        </span>
+        <p>{{ step.name }}</p>
+      </div>
+      <div class="line-step line-step-pending"></div>
+    </ng-template>
+  </div>
+  <!-- <div class="box-step">
+    <div class="line-step line-step-success"></div>
+    <div class="step step-success">2</div>
+    <div class="line-step line-step-success"></div>
+  </div>
+  <div class="box-step">
+    <div class="line-step line-step-progress"></div>
+    <div class="step step-progress">3</div>
+    <div class="line-step line-step-progress"></div>
+  </div>
+
+  <div class="box-step">
+    <div class="line-step line-step-pending"></div>
+    <div class="step step-pending">4</div>
+    <div class="line-step line-step-pending"></div>
+  </div> -->
+</div>

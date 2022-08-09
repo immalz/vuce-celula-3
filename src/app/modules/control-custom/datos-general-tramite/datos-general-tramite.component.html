@@ -1,0 +1,69 @@
+<div class="page">
+    <div class="sidebar">
+        a
+    </div>
+    <div class="content">
+
+        <vuce2-lib-breadcrumb
+            [items]="breadCrumbs">
+        </vuce2-lib-breadcrumb>
+        <h1 class="mt-5 mb-5 d-flex"> 
+        <button class="mr-2" mat-flat-button color="warn">
+            <mat-icon>keyboard_backspace</mat-icon>
+        </button> Trámites en Proceso de Evaluación</h1>
+
+        <div class="card p-4">
+            <h3>Datos del Trámite</h3>
+            <div class="row">
+                <div class="col-sm row">
+                    <div class="col">
+                        <p>Número de Trámite:</p>
+                        <p>Número de Expendiente:</p>
+                    </div>
+                    <div class="col-7">
+                        <p class="text-muted">2022002368</p>
+                        <p class="text-muted">051</p>
+                    </div>
+                </div>
+                <div class="col-sm row">
+                    <div class="col">
+                        <p>Fecha del Trámite:</p>
+                        <p>Estado:</p>
+                    </div>
+                    <div class="col-7">
+                        <p class="text-muted">21/03/2022 15:41</p>
+                        <p class="text-muted">Pendiente</p>
+                    </div>
+                </div>
+                <div class="col-sm row">
+                    <div class="col-sm">
+                        <p>Evaluador:</p>
+                        <p>Canal:</p>
+                    </div>
+                    <div class="col-7">
+                        <p class="evaluador">MP-EVALUADOR SERFOR</p>
+                        <p>Atención: Trámite con canal rojo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 mb-5">
+            <vuce2-lib-radio-state  [tabList]="tabsRadius"></vuce2-lib-radio-state>
+        </div>
+
+        <div class="card p-5">
+            <vuce2-lib-tab (tabEvent)="changeTab($event)" [contentSource]="tabs"></vuce2-lib-tab>
+            <router-outlet></router-outlet>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <button class="btn_evaluacion">
+                Evaluar Trámite
+            </button>
+        </div>
+
+        <vuce2-lib-footer></vuce2-lib-footer>
+  
+    </div>
+</div>

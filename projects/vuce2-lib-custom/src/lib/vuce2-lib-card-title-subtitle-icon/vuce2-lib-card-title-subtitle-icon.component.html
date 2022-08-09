@@ -1,0 +1,24 @@
+<div id="cardMayor{{title}}" class="card" style='gap: 10px;margin-bottom: 20px;' >
+    <div (click)="update()" style="display: flex;flex-direction: row; cursor: pointer;">
+        <div style="align-self: center; width: 20%;">
+            <img src="{{icon}}" style="width: 60%;" >
+        </div>
+        <div style="width:70%" >
+                <div class="tit">{{title}}</div>
+                <div class="subtitle">{{subtitle}}</div>
+        </div>
+        <div style="width: 10%;align-self: center;" *ngIf="!mostrar" >
+            <img class="righticon" src="{{iconRight}}" style="float: right;" >
+        </div>
+    </div>
+    <div *ngIf="mostrar" style="align-self: center;">
+        <form [formGroup]="cardForm">
+            <vuce2-lib-select [control]="cardSelect" [formControlName]="'cardSelect'"
+            [etiqueta]="etiqueta" [items]="items" [texto_alternativo]="texto_alternativo"
+            >
+            </vuce2-lib-select>
+        </form>
+        <vuce2-lib-button-primary [texto]="textButton" (click)="valueEvent()" [icon]="iconButton" [disabled]="!cardForm.valid">
+        </vuce2-lib-button-primary>
+    </div>
+</div>

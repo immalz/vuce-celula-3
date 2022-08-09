@@ -1,0 +1,66 @@
+@import './../assets/variables/variables.component.scss';
+
+.card-bienvenida{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+
+    //position: absolute;
+    // width: 862px;
+    height: 100%;
+    // left: 760px;
+    // top: 42px;
+
+    background: map-get($vuce2-color-bienvenida, backgroundColor);
+    border-radius: 8px;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+h1{
+
+    position: static;
+    width: 100%;
+    height: 36px;
+    margin: 36px 0px;
+    line-height: 0.8;
+}
+.grisesTitle{
+    color: map-get($vuce2-color-bienvenida, titulo);
+}
+.grisesSubTitle{
+    color: map-get($vuce2-color-bienvenida, subtitulo);
+}
+.body1{
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    line-height: 1.2;
+    margin: 36px 0px;
+}
+.position{
+    position: static;
+    width: 100%;
+    height: 50%;
+}
+.titulo{
+    color: map-get($vuce2-color, primary);
+}
+.componente{
+    color: map-get($vuce2-color, primary);
+}
+.cuerpo{
+    //font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    flex-direction: column;
+    font-size: 16px;
+    //line-height: 19px;
+    //display: flex;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+}

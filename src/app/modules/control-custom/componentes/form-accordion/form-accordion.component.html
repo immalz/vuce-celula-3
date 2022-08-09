@@ -1,0 +1,92 @@
+<div>
+  <vuce2-lib-radio-state [tabList]="tabsRadius"></vuce2-lib-radio-state>
+  <vuce2-lib-tab-state
+    class="example-tab-state"
+    [tabList]="tabs"
+  ></vuce2-lib-tab-state>
+  <br />
+  <mat-accordion class="example-headers-align" multi>
+    <vuce2-lib-accordion
+      [title]="'Datos del Solicitante'"
+      [status]="'Conforme'"
+      [image]="imageAccordion"
+    >
+      <ng-template vuce2LibContentTemplate="contentTemplate">
+        <mat-form-field appearance="fill">
+          <mat-label>First name</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Age</mat-label>
+          <input matInput type="number" min="1" />
+        </mat-form-field>
+      </ng-template>
+    </vuce2-lib-accordion>
+    <vuce2-lib-accordion [title]="'Detalles'" [status]="'Conforme'"[image]="imageAccordion">
+      <ng-template vuce2LibContentTemplate="contentTemplate">
+        <table>
+          <colgroup>
+            <col width="15%" />
+            <col width="10%" />
+            <col width="15%" />
+            <col width="25%" />
+            <col width="35%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <td>
+                <span style="font-weight: 500">Entidad: </span>
+              </td>
+              <td>
+                <span style="font-weight: 500">TUPA: </span>
+              </td>
+              <td>
+                <span style="font-weight: 500">Formato: </span>
+              </td>
+              <td>
+                <span style="font-weight: 500">Fecha Actualización: </span>
+              </td>
+              <td>
+                <span style="font-weight: 500">Nombre: </span>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span>DIGEMID</span>
+              </td>
+              <td>
+                <span>225</span>
+              </td>
+              <td>
+                <!-- <span>DGM005 - {{row.name}}</span> -->
+                <span>Test</span>
+              </td>
+              <td>
+                <span>12/02/2022 09:00am</span>
+              </td>
+              <td>
+                <span>
+                  Informe de Inspección y Verificación/ Autorización de
+                  Plaguicidas e Insumos Veterinarios - IIV/APIV para la
+                  importación de plantas, productos vegetales y otros artículos
+                  reglamentados
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+    </vuce2-lib-accordion>
+    <vuce2-lib-accordion
+      [title]="'Productos'"
+      [status]="'Observado'"[image]="imageAccordion"
+    ></vuce2-lib-accordion>
+    <vuce2-lib-accordion [title]="'Prueba'"[image]="imageAccordion"></vuce2-lib-accordion>
+    <vuce2-lib-accordion [title]="'Guía de transporte o saldo'"[image]="imageAccordion">
+    </vuce2-lib-accordion>
+    <vuce2-lib-accordion [title]="'Requisitos Adjuntos'"[image]="imageAccordion"></vuce2-lib-accordion>
+  </mat-accordion>
+</div>

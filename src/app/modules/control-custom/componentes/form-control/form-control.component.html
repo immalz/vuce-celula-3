@@ -1,0 +1,119 @@
+<div class="container bg-light mt-5">
+  <div class="title text-center">
+    <h4>{{ titulo }}</h4>
+  </div>
+  <div class="content">
+    <form [formGroup]="form">
+      <div class="row">
+        <vuce2-lib-input-calendar
+          formControlName="fecha"
+          [etiqueta]="'Fecha'"
+          [control]="fecha"
+        ></vuce2-lib-input-calendar>
+      </div>
+      <div class="row">
+        <vuce2-lib-input-text
+          formControlName="direccion"
+          [etiqueta]="'Direccion'"
+          [placeholder]="'Ingrese la direccion'"
+          [control]="direccion"
+        >
+        </vuce2-lib-input-text>
+      </div>
+      <div class="row">
+        <vuce2-lib-select
+          [etiqueta]="'Producto'"
+          [items]="productos"
+          formControlName="producto"
+          [control]="producto"
+          [width]="'160px'"
+          (change)="handlerChange($event)"
+        >
+        </vuce2-lib-select>
+      </div>
+      <div class="row">
+        <vuce2-lib-radio-button
+          [etiqueta]="'Rubro'"
+          [item]="rubros"
+          formControlName="rubro"
+          [control]="rubro"
+          (mostrarEvent)="onEvent($event)"
+        >
+        </vuce2-lib-radio-button>
+      </div>
+      <div class="row">
+        <vuce2-lib-check-box
+          [textValue]="'Tiene permiso?'"
+          formControlName="permitido"
+        >
+        </vuce2-lib-check-box>
+      </div>
+      <div class="row">
+        <vuce2-lib-input-textarea
+          [etiqueta]="'Comentarios'"
+          [control]="comentario"
+          formControlName="comentario"
+        >
+        </vuce2-lib-input-textarea>
+      </div>
+      <div class="row mt-3">
+        <vuce2-lib-button
+          [texto]="'Guardar'"
+          [colors]="'warn'"
+          [disabled]="form.invalid"
+          (click)="guardar()"
+        ></vuce2-lib-button>
+      </div>
+      <div class="row">
+        <vuce2-lib-card-icon
+          [path_img]="path_img"
+          [url]="url_icon"
+          [valor]="valor_icon"
+          [texto]="texto_icon"
+        >
+        </vuce2-lib-card-icon>
+        <vuce2-lib-card-icon
+          [path_img]="path_img"
+          [url]="url_icon"
+          [valor]="valor_icon"
+          [texto]="texto_icon"
+        >
+        </vuce2-lib-card-icon>
+        <vuce2-lib-card-icon
+          [path_img]="path_img"
+          [url]="url_icon"
+          [valor]="valor_icon"
+          [texto]="texto_icon"
+        >
+        </vuce2-lib-card-icon>
+      </div>
+      <div class="row">
+        <vuce2-lib-card-info
+          [title]="titulo_info"
+          [subTitle]="subTit_info"
+          [date]="date_info"
+          [icon]="icon"
+          [ellipse]="ellipse"
+        >
+        </vuce2-lib-card-info>
+      </div>
+      <div class="row">
+        <vuce2-lib-card-link-icon
+          [iconLeft]="iconLCardLink"
+          [title]="titleCardLink"
+          [link]="linkCardLink"
+          [iconRight]="iconRCardLink"
+          [texto]="textoCardLink"
+        >
+        </vuce2-lib-card-link-icon>
+      </div>
+      <div class="row">
+        <vuce2-lib-calendar> </vuce2-lib-calendar>
+      </div>
+      <br />
+      <div class="row">
+        <vuce2-lib-upload-file [config]="configUpload"></vuce2-lib-upload-file>
+      </div>
+    </form>
+  </div>
+</div>

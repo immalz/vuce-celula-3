@@ -1,0 +1,189 @@
+@import './../assets/variables/variables.component.scss';
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+
+    position: static;
+    left: 0px;
+    top: 0px;
+
+    background: map-get($vuce2-color-card-link-icon, backgroundColor);
+    border: 1px solid map-get($vuce2-color-card-link-icon, border);
+    box-sizing: border-box;
+    border-radius: 12px;
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 0px 24px 0px;
+}
+.frame828 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+
+    position: static;
+    left: 16px;
+    top: 16px;
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 6px 0px;
+}
+.frame836 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    
+    position: static;
+    left: 16px;
+    top: 88px;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    margin: 6px 0px;
+}
+.frame816 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: static;
+    left: 52px;
+    top: 0px;
+
+    flex: auto;
+    order: 1;
+    flex-grow: 1;
+    margin: 0px 12px;
+}
+.chevron_right {
+    position: static;
+    left: 92.03%;
+    right: 0%;
+    top: 31.82%;
+    bottom: 31.82%; 
+    
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 0px 12px;
+}
+.frame818 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+
+    position: static;
+    left: 0px;
+    top: 13px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 5px 0px -5px;
+}
+.invi {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+    position: static;
+    left: 0px;
+    top: 0px;
+
+    opacity: 0;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+}
+.tit {
+    position: static;
+    left: 0px;
+    top: 0px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+
+    color: map-get($vuce2-color-card-link-icon, title);
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 1;
+    margin: 6px 0px 0px -10px;
+}
+.link {
+    position: flex;
+    left: 0px;
+    top: 36px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+
+    color: map-get($vuce2-color-card-link-icon, link);
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    margin: 6px 0px 0px -10px;
+}
+.text {
+    position: flex;
+    left: 54px;
+    top: 0px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+
+    color: map-get($vuce2-color-card-link-icon, text);
+
+    flex: none;
+    order: 1;
+    align-self: center;
+    flex-grow: 1;
+    margin: 0px 14px 0px 10px;
+}
+.lefticon {
+    margin-top: 15px;
+}
+.righticon {
+    margin-top: 15px;
+}
+button:hover{
+    background: map-get($vuce2-color-card-link-icon, hover);
+}

@@ -1,0 +1,39 @@
+.page {
+    width: 100%;
+    height: calc(100vh - 58px);
+    display: flex;
+    background: #f8f8f8;
+    .sidebar {
+        width: 300px;
+        height: 100%;
+        background: #242424;
+    }
+    .content {
+        width: calc(100% - 300px);
+        height: 100%;
+        overflow-y: scroll;
+    }
+    .evaluador {
+        font-weight: bold;
+        color:#027ecc
+    }
+
+    .transition {
+        transition: 0.3s ease;
+    }
+
+    .canal {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background: #fff4ec;
+        font-size: 14px;
+    }
+
+    .canal span {
+        color: #b95000;
+
+    }
+}

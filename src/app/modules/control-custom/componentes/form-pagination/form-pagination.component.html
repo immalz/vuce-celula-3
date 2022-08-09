@@ -1,0 +1,27 @@
+<div class="container-fluid mt-5">
+
+    <div class="page-header title text-center">
+        <h4>Grilla Pagination</h4>
+        <button mat-stroked-button (click)="onLang('en')">EN</button>
+        <button mat-stroked-button (click)="onLang('es')">ES</button>
+    </div>
+    
+    <vuce2-lib-pagination #grid 
+        [options]="options" 
+        [datasource]="datasource" 
+        [paging]="paging"
+        (onRefresh)="handlerRefresh($event)">
+
+        <ng-template vuce2LibPaginationCellTemplate="contentTemplate" let-data='data' let-row='row'>
+            <vuce2-lib-card-link-icon
+                    [iconLeft]="iconLCardLink"
+                    [title]="row.nombre"
+                    [link]="linkCardLink"
+                    [iconRight]="iconRCardLink"
+                    [texto]="row.descripcion">
+            </vuce2-lib-card-link-icon>
+        </ng-template>
+
+    </vuce2-lib-pagination>
+    
+</div>

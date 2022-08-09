@@ -1,0 +1,16 @@
+@import './../assets/variables/variables.component.scss';
+:host
+::ng-deep{
+    .mat-button-toggle-checked{
+        color: white!important;  //$primary-color-contrast!important;
+        background: map-get($vuce2-color-tab, default)!important;  //$primary-color!important;
+        border-color: map-get($vuce2-color-tab, default);
+    }
+    .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+        background-color:  map-get($vuce2-color-tab, default);
+        width:var(--anchura)!important;
+    }
+    .mat-tab-label{
+        width: -webkit-fill-available;
+    }
+}

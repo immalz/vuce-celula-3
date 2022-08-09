@@ -1,0 +1,31 @@
+<!-- <mat-button-toggle-group [vertical]="false" #group="matButtonToggleGroup" (change)="handleChangeTab($event.value)" [value]="selectedVal">
+    <mat-button-toggle *ngFor="let tab of contentSource;" value="{{tab.ngName}}" [disabled]="tab.disabled"> {{tab.caption}} </mat-button-toggle>
+</mat-button-toggle-group> -->
+<mat-tab-group (focusChange)="handleChangeTab($event.tab.textLabel)" (selectedTabChange)="mostrarTab($event)" >
+    
+    <mat-tab *ngFor="let tab of contentSource;index as i" [disabled]="tab.disabled">
+        <ng-template mat-tab-header (focusChange)="mostrarTab(i)">
+
+        </ng-template>
+        <ng-template mat-tab-label style="width: 100%;" >
+            <div *ngIf="mostrar[i]" >
+                <span class="material-icons" *ngIf="completo[i]" style="color: rgba(0, 200, 83, 1);float: left;">
+                    check_circle
+                </span>
+                <span class="material-icons" *ngIf="!completo[i]" style="color: rgba(240, 193, 27, 1);float: left;">
+                    watch_later
+                </span>
+            </div>
+            <span>{{tab.caption}}</span>
+        </ng-template>
+        <div style="width: 160px;position: relative;" [style]="position(i)" >
+            <div style="background-color: #FBFBE6;color: rgba(240, 193, 27, 1);width: 100%;text-align: center;" *ngIf="!completo[i]">
+                Incompleto
+            </div>
+            <div style="background-color: #EDF9F0;color: rgba(40, 125, 60, 1);width: 100%;text-align: center;" *ngIf="completo[i]">
+                Completo
+            </div>
+        </div>
+    </mat-tab>
+    
+</mat-tab-group>

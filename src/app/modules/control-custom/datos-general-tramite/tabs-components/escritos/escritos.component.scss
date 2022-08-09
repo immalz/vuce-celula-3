@@ -1,0 +1,26 @@
+.state {
+    width: 182px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 20px;
+    margin: auto;
+}
+
+.state.aprobado {
+    background: #a7ebce;
+    color:#2f8445;
+}
+.state.rechazado {
+    background: #f08f97;
+    color:#842f49;
+}
+.state.transmitir {
+    background: #dbdbdb;
+    color:#6a6b6b;
+}
+
+.material-icons {
+    cursor: pointer;
+}

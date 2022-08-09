@@ -1,0 +1,35 @@
+
+
+@import "../../../../../projects/vuce2-lib-custom/src/lib/assets/variables/variables.component.scss";
+
+.page {
+    width: 100%;
+    height: calc(100vh - 58px);
+    display: flex;
+    background: #f8f8f8;
+    .sidebar {
+        width: 300px;
+        height: 100%;
+        background: #242424;
+    }
+    .content {
+        width: calc(100% - 300px);
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .evaluador {
+        font-weight: bold;
+        color:#027ecc
+    }
+
+    .btn_evaluacion {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 10px;
+        background: $main-red;
+        color: #fff;
+        font-size: 16px;
+        font-family: 'Roboto';
+    }
+}

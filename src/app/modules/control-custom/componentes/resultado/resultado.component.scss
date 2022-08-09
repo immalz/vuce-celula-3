@@ -1,0 +1,17 @@
+.page {
+    width: 100%;
+    height: calc(100vh - 58px);
+    display: flex;
+    background: #f8f8f8;
+    .sidebar {
+        width: 300px;
+        height: 100%;
+        background: #242424;
+    }
+    .content {
+        width: calc(100% - 300px);
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+}

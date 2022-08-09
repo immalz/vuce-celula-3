@@ -1,0 +1,37 @@
+
+<div class="d-flex justify-content-between align-items-center">
+    <h5 class="mt-4 mb-4">Bandeja de Notificaciones / Subsanaciones</h5>
+    <h5 class="mt-4 mb-4" style="color: red">
+        <button mat-flat-button color="warn">
+            <span class="material-icons">
+                open_in_browser
+            </span> 
+        </button> Responder
+    </h5>
+</div>
+
+<vuce2-lib-grid 
+    [options]="options" 
+    [columns]="columns" 
+    [datasource]="datasource" 
+    [paging]="paging"
+    [borderHeader]="false"
+    (onRefresh)="handlerRefresh($event)">
+
+    <ng-template vuce2LibGridCellTemplate="checkbox" let-data='data' let-row='row'>
+        <vuce2-lib-check-box
+        [textValue]="''"
+        [(ngModel)]="row.check"
+      >
+      </vuce2-lib-check-box>
+    </ng-template>
+
+    <ng-template vuce2LibGridCellTemplate="acciones" let-data='data' let-row='row'>
+        <span style="color: #df4c47;" class="material-icons" >
+            find_in_page
+        </span>
+        <span style="color: #df4c47;" class="material-icons ml-4" >
+            download
+        </span>
+    </ng-template>
+</vuce2-lib-grid>

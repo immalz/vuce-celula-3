@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+.container-tab {
+  display: flex;
+  justify-content: center;
+}
+
+.item-tab:first-child {
+  border-radius: 4px 0 0 0;
+}
+
+.item-tab:last-child {
+  border-radius: 0 4px 0 0;
+}
+
+.item-tab {
+  width: 200px;
+  text-align: center;
+  display: flex;
+  background-color: white;
+  border-bottom: 2px solid #acacac;
+  color: #6a6b6b;
+  cursor: pointer;
+}
+
+.item-tab p {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  height: 30px;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.tab-selected {
+  border-bottom: 2px solid #4488ff;
+  color: #4488ff;
+}

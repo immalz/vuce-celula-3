@@ -1,0 +1,5 @@
+@import './../assets/variables/variables.component.scss';
+.error {
+    color:map-get($vuce2-color-error, color);
+    font-size: 10pt;
+}

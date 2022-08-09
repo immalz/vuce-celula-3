@@ -1,0 +1,45 @@
+<div fxFlex fxLayout="column" class="menu" *ngIf="modules.length > 0;">
+    <div class="menu-item-buscar">
+        <img class="menu-item-icon" src="{{icon_lupa}}" />
+        <input placeholder="Buscar" class="menu-item-buscar-label buscar">
+    </div>
+    <div style="height: 83%;">
+        <ul class="list-unstyled">
+            <li *ngFor="let item of modules;let i = index">
+                <span *ngIf="item.subModules; else otherTemplate;">
+                    <div  *ngIf="item.subModules.length > 0; else otherTemplate;"  class="menu-item"
+                        [attr.data-bs-target]="'#toggle' + item.id" data-bs-toggle="collapse" aria-expanded="false" >
+    
+                        <img class="menu-item-icon" src="{{item.icon}}" />
+                        <p class="menu-item-label">{{item.name}}</p>
+                        <img class="menu-item-arrow" src="{{icon_arrow_right}}" />
+                    </div>
+    
+                    <ul class="list-unstyled collapse" id="toggle{{item.id}}">
+                        <div *ngFor="let subItem of item.subModules;" id="menu-{{subItem.id}}"  class="{{subItem==itemSelected?'menu-item selected':'menu-item'}}" 
+                         (click)="handleChangeMenu(subItem)" >
+                            <span class="menu-item-icon" style="width: 32px;">&nbsp;</span>
+                            <p class="menu-item-label">{{subItem.name}}</p>
+                        </div>
+                    </ul>
+                </span>    
+    
+                <ng-template #otherTemplate>
+                    <div  id="menu-{{item.id}}" class="{{item==itemSelected?'menu-item selected':'menu-item '}}"  (click)="handleChangeMenu(item)" > 
+                        <img class="menu-item-icon" src="{{item.icon}}" />
+                        <p class="menu-item-label">{{item.name}}</p>
+                    </div>
+                </ng-template>    
+    
+            </li>
+        </ul>
+        <div class="card-consulta" >
+            <img src="{{imageHelp}}" class="card-consulta-icon">
+            <span class="card-consulta-title">Necesita ayuda</span>
+            <button class="btn card-consulta-btn">
+                Ir al centro de ayuda
+            </button>
+        </div>
+    </div>
+    
+</div>

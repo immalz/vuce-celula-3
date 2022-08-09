@@ -1,0 +1,41 @@
+
+<div class="d-flex justify-content-between align-items-center">
+    <h5 class="mt-4 mb-4">Bandeja de Informes</h5>
+    <h5 class="mt-4 mb-4" style="color: red">
+        <button mat-flat-button color="warn">
+            <span class="material-icons">
+                open_in_browser
+            </span> 
+        </button> Generar Informe
+    </h5>
+</div>
+
+<vuce2-lib-grid 
+    [options]="options" 
+    [columns]="columns" 
+    [datasource]="datasource" 
+    [paging]="paging"
+    [borderHeader]="false"
+    (onRefresh)="handlerRefresh($event)">
+
+    <ng-template vuce2LibGridCellTemplate="acciones" let-data='data' let-row='row'>
+        <span style="color: #df4c47;" class="material-icons" >
+            edit
+        </span>
+        <span style="color: #df4c47;" class="material-icons ml-4" >
+            find_in_page
+        </span>
+    </ng-template>
+
+    <ng-template vuce2LibGridCellTemplate="estado" let-data='data' let-row='row'>
+        <p class="m-0">
+            <button [ngClass]="{
+                'aprobado': row.estado === 'Aprobado',
+                'rechazado': row.estado === 'Rechazado'
+                }"
+            class="state">
+                    {{row.estado}}
+            </button>
+        </p>
+    </ng-template>
+</vuce2-lib-grid>

@@ -1,0 +1,18 @@
+<nav class="content" aria-label="breadcrumb" *ngIf="items.length > 0">
+  <ol class="breadcrumb">
+    <li>
+      <img class="home" src="/assets/vuce2-lib-assets/images/home_breadcrumb.png" (click)="onClick(itemHome, 0)">
+    </li>
+    <li class="breadcrumb-item " *ngFor="let item of items; let i = index">
+      <div *ngIf="item.selected == false; else otroTemplate" class="{{item.event? 'item-label text': 'item-label'}}"
+        (click)="onClick(item, i)">
+        {{item.texto}}
+      </div>
+      <ng-template #otroTemplate>
+        <div class="item-label selected">
+          {{item.texto}}
+        </div>
+      </ng-template>
+    </li>
+  </ol>
+</nav>

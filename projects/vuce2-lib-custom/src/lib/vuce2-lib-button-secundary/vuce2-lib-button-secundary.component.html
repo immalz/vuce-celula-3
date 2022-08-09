@@ -1,0 +1,7 @@
+<button 
+    [disabled] = "disabled"
+    [ngClass]="largo">
+    <span *ngIf="iconLeft"><mat-icon class="icon" > {{iconLeft}} </mat-icon></span>
+    <span [ngClass]="largo" *ngIf="texto">{{texto}} </span>
+    <span *ngIf="icon"><mat-icon class="icon"> {{icon}} </mat-icon></span>
+</button>

@@ -1,0 +1,1 @@
+export * from './vuce2-lib-content-template.directive';

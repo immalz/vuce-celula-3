@@ -1,0 +1,5 @@
+<div class="container-tab">
+  <div (click)="emmitClick(item)" *ngFor="let item of tabList" [ngClass]="{'tab-selected' : item.status}" class="item-tab" [style.width]="'calc(100% /' + tabList.length">
+    <p>{{ item.text }}</p>
+  </div>
+</div>

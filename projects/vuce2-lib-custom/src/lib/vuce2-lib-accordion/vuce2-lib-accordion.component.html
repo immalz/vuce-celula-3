@@ -1,0 +1,18 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <div>
+                <img [src]="image" alt="" />
+                <span>{{ title }}</span>
+            </div>
+        </mat-panel-title>
+        <mat-panel-description>
+            <div *ngIf="statusVisible" [ngClass]="statusClass[status]" class="status">
+                <span>{{ status }}</span>
+            </div>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-container [ngTemplateOutlet]="getContentTemplate()">
+    </ng-container>
+</mat-expansion-panel>

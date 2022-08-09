@@ -1,0 +1,6 @@
+<!-- <mat-button-toggle-group [vertical]="false" #group="matButtonToggleGroup" (change)="handleChangeTab($event.value)" [value]="selectedVal">
+    <mat-button-toggle *ngFor="let tab of contentSource;" value="{{tab.ngName}}" [disabled]="tab.disabled"> {{tab.caption}} </mat-button-toggle>
+</mat-button-toggle-group> -->
+<mat-tab-group (focusChange)="handleChangeTab($event.tab.textLabel)" >
+    <mat-tab *ngFor="let tab of contentSource;" [label]="tab.caption" [disabled]="tab.disabled" (change)="handleChangeTab($event)"></mat-tab>
+</mat-tab-group>

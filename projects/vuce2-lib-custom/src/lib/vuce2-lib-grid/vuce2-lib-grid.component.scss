@@ -1,0 +1,110 @@
+@import './../assets/variables/variables.component.scss';
+select{
+    appearance: auto;
+}
+
+div.vuce2-lib-grid-table_wrapper div.vuce2-lib-grid-table_processing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    margin-top: -26px;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.vuce2-lib-grid-table{
+    border-radius: 4px 4px 0px 0px;
+    overflow: hidden;
+}
+
+.vuce2-lib-grid-header{
+    /* Header */
+
+    /* Auto layout */
+
+    //display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+
+    position: static;
+    width: 685px;
+    height: 48px;
+    left: 0px;
+    top: 0px;
+
+    background: map-get($vuce2-color-grid, header);
+    box-shadow: inset 0px -1px 0px map-get($vuce2-color-grid, headerBoxShadow);
+    color: map-get($vuce2-color-grid, color);
+    border-radius: 4px 4px 0px 0px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.vuce2-lib-grid-item {
+    background: map-get($vuce2-color-grid, item);
+    box-shadow: inset 0px -1px 0px map-get($vuce2-color-grid, itemBoxShadow);
+}
+
+//** PAGINATION
+.vuce2-lib-grid-pagination::ng-deep .pagination-prev.page-item.disabled .page-link{
+    background-color: map-get($vuce2-color-pagination, transparent);
+    border:none;
+}
+.vuce2-lib-grid-pagination::ng-deep .pagination-prev.page-item .page-link{
+    background-color: map-get($vuce2-color-pagination, transparent);
+    border:none;
+}
+.vuce2-lib-grid-pagination::ng-deep .page-item.active .page-link {
+    color: map-get($vuce2-color-pagination, color);
+    background-color:map-get($vuce2-color-pagination, backgroundColor)!important;
+    border-color: map-get($vuce2-color-pagination, backgroundColor);
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.vuce2-lib-grid-pagination::ng-deep .page-item .page-link {
+    color: map-get($vuce2-color-pagination, pageItem);
+    //background-color:white !important;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.vuce2-lib-grid-pagination::ng-deep .page-item .page-link:hover {
+    color: map-get($vuce2-color-pagination, colorHover);
+    background-color:map-get($vuce2-color-pagination, backgroundColorHover) !important;
+    border-color: map-get($vuce2-color-pagination, backgroundColorHover);
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.vuce2-lib-grid-pagination::ng-deep .page-item.disabled .page-link{
+    color: map-get($vuce2-color-pagination, pageItem);
+    border:none;
+}
+
+.vuce2-lib-grid-pagination::ng-deep .pagination-next.page-item .page-link{
+    background-color: map-get($vuce2-color-pagination, transparent);
+    border:none;
+}
+.vuce2-lib-grid-pagination::ng-deep .pagination-next.page-item.disabled .page-link{
+    background-color: map-get($vuce2-color-pagination, transparent);
+    border:none;
+}
+
+.vuce2-lib-grid-button{
+    //color: #DA211C;
+    flex-direction: row;
+    text-decoration: none;
+    background-color: map-get($vuce2-color-pagination, transparent);
+    border: 0px;
+}
+

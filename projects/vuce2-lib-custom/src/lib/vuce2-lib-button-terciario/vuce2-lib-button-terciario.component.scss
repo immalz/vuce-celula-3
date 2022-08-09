@@ -1,0 +1,60 @@
+@import './../assets/variables/variables.component.scss';
+
+button{
+    color: map-get($vuce2-color, primary);
+    flex-direction: row;
+    text-decoration: none;
+    background-color: transparent;
+    border: 0px;
+}
+.button{
+    //border-color: #DA211C;
+    color: map-get($vuce2-color, primary);
+
+    //position: static;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    //border-radius: 50%;
+    //border: 0px;
+
+    //flex: none;
+    //order: 0;
+    //flex-grow:inherit;
+    //flex-basis: 0%;
+    margin: 2px 4px;
+    text-decoration: none;
+    //border-radius: 8px;
+}
+.redondo{
+    padding: 10px;
+    //border-style: none;
+    //flex-direction: row;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+    //position: static;
+    justify-content: center;
+    align-items: center;
+    line-height: 42px;
+}
+button:hover{
+    //border-color: #C2342D;
+    color: map-get($vuce2-color, hover);
+}
+button:active{
+    //border-color: #A7241E;
+    color: map-get($vuce2-color, active);
+}
+button:disabled{
+    //border-color: rgba(218, 33, 28, 0.5);
+    color: map-get($vuce2-color, disabled);
+}
+.icon{
+    line-height: 0px;
+    text-align: center;
+    position: static;
+    line-height: 23px;
+    vertical-align: middle;
+    //width: auto;
+}

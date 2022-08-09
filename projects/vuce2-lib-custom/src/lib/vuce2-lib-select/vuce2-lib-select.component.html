@@ -1,0 +1,46 @@
+<!-- <span class="select">
+  <mat-form-field class="bg-white" appearance="outline">
+    <mat-label>{{ etiqueta }}</mat-label>
+    <select
+      matNativeControl
+      [required]="required"
+      [(ngModel)]="selected"
+      [disabled]="disabled"
+      (change)="onChangeValue($event)"
+    >
+      <option
+        *ngFor="let item of items"
+        [value]="item.id"
+        [disabled]="item.disabled"
+      >
+        {{ item.text }}
+      </option>
+    </select>
+  </mat-form-field>
+
+</span>
+ -->
+
+<div class="select_container">
+  <div class="select" (click)="onSelected()">
+    <label class="label_default" [ngClass]="{ outline: selected }">{{
+      etiqueta
+    }}</label>
+    <label *ngIf="selected">{{ selected }}</label>
+    <mat-icon class="icon">expand_more</mat-icon>
+  </div>
+
+  <div *ngIf="showSelect" class="options">
+    <div class="option_disabled" (click)="onChangeValue('')">
+      - Seleccionar -
+    </div>
+    <div
+      class="option"
+      *ngFor="let item of items"
+      (click)="onChangeValue(item)"
+    >
+      {{ item.text }}
+    </div>
+  </div>
+</div>
+<vuce2-lib-form-error-msg [control]="control"></vuce2-lib-form-error-msg>

@@ -1,0 +1,21 @@
+
+   .panelHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.panelHeader p {
+ padding: 5px 30px;
+}
+
+.panelHeader__button {
+     border-radius: 5px;
+     background: #a7ebce;
+     color:#2f8445;
+}
+
+h4,h5 {
+    font-weight: bold;
+}

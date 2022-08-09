@@ -1,0 +1,140 @@
+<div class="page">
+    <div class="sidebar">
+        a
+    </div>
+    <div class="content">
+
+        <vuce2-lib-breadcrumb
+            [items] = "breadCrumbs">
+        </vuce2-lib-breadcrumb>
+        <!-- <h6 class="text-muted mb-4"> inicio | Trámites / Trámites en Proceso de Evaluación</h6> -->
+        <h1 class="mt-5">Trámites en Proceso de Evaluación</h1>
+        <span class="text-muted">buscar por: Formato, Nro. Trámite, Expediente o Solicitante</span>
+
+        <!---FILTROS--->
+
+        <div class="accordion-item mt-5 mb-5">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                Filtros de Búsqueda
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"  aria-labelledby="panelsStayOpen-headingThree">
+              <form [formGroup]="formFilter" class="accordion-body">
+                <div class="row" >
+                    <vuce2-lib-input-text
+                        class="col-sm"
+                        formControlName="formato"
+                        [placeholder]="'Formato, Nro. Trámite o solicitante'"
+                        [control]="formato"
+                        [etiqueta]="'formato'"
+                        [sufijo]="'search'"
+                    ></vuce2-lib-input-text>
+                    <vuce2-lib-select
+                        [items]="estados"
+                        class="col-sm"
+                        formControlName="estado"
+                        [etiqueta]="'Estado'"
+                        [control]="estado"
+                        (change)="handlerChange($event)"
+                    ></vuce2-lib-select>
+                    <vuce2-lib-input-calendar
+                        formControlName="fecha"
+                        class="col-sm"
+                        [etiqueta]="'Fecha'"
+                        [control]="fecha"
+                    ></vuce2-lib-input-calendar>
+                    <div class="d-flex gap-2 col-sm">
+                        <button mat-raised-button color="warn">
+                            Guardar
+                        </button>
+                        <button mat-stroked-button color="warn" (click)="showMoreFilter = !showMoreFilter">
+                            <mat-icon>filter_list</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="row w-50" *ngIf="showMoreFilter">
+                    <vuce2-lib-select
+                        [items]="estados"
+                        class="col-sm"
+                        formControlName="prioridad"
+                        [control]="prioridad"
+                        [etiqueta]="'Prioridad de atención'"
+                       
+                        (change)="handlerChange($event)"
+                    ></vuce2-lib-select>
+                    <vuce2-lib-input-text
+                        class="col-sm"
+                        formControlName="diasRestantes"
+                        [etiqueta]="'Dias Restantes'"
+                        [control]="diasRestantes"
+                        [sufijo]="'search'"
+                    ></vuce2-lib-input-text>
+                </div>
+              </form>
+            </div>
+        </div>
+
+        <!---TABLA--->
+
+        <vuce2-lib-grid 
+            [options]="options" 
+            [columns]="columns" 
+            [datasource]="datasource" 
+            [paging]="paging"
+            [borderHeader]="true"
+            (onRefresh)="handlerRefresh($event)">
+
+           
+            <ng-template vuce2LibGridCellTemplate="icon" let-data='data' let-row='row'>
+                <span style="color: #5a95fd;" class="material-icons" (click)="''">
+                    info
+                </span>
+            </ng-template>
+
+            <ng-template vuce2LibGridCellTemplate="acciones" let-data='data' let-row='row'>
+                <span style="color: #df4c47;" class="material-icons" (click)="goToDetail(row)">
+                    find_in_page
+                </span>
+            </ng-template>
+
+            <ng-template vuce2LibGridCellTemplate="Estado" let-data='data' let-row='row'>
+                <button [ngClass]="row.Estado === 'Pendiente' ? 'no_assign' : 'assign'" class="state">
+                    {{row.Estado}}
+                </button>
+            </ng-template>
+
+            <ng-template vuce2LibGridCellTemplate="detailTemplate" let-data='data' let-row='row'>
+                <div class="row">
+                    <div class="col-sm row">
+                        <div class="col-sm">
+                            <p style="font-weight: bold;">Nombre:</p>
+                            <p style="font-weight: bold;">Plazo del Tramite:</p>
+                            <p style="font-weight: bold;">RUC:</p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="text-muted">Texto de Prueba</p>
+                            <p class="text-muted">Texto de Prueba</p>
+                            <p class="text-muted">Texto de Prueba</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm row">
+                        <div class="col-sm">
+                            <p style="font-weight: bold;">Nombre:</p>
+                            <p style="font-weight: bold;">Plazo del Tramite:</p>
+                            <p style="font-weight: bold;">RUC:</p>
+                        </div>
+                        <div class="col-sm">
+                            <p class="text-muted">Texto de Prueba</p>
+                            <p class="text-muted">Texto de Prueba</p>
+                            <p class="text-muted">Texto de Prueba</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </vuce2-lib-grid>
+        <vuce2-lib-footer></vuce2-lib-footer>
+    </div>
+  
+</div>

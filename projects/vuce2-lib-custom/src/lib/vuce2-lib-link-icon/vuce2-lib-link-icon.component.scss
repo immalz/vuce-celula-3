@@ -1,0 +1,18 @@
+@import "./../assets/variables/variables.component.scss";
+.espaciado {
+  margin: 10px;
+}
+.color{
+  background-color:rgba(218, 33, 28, 1);
+  cursor: pointer;border-radius: 4px;
+  width: 32px;
+}
+.color:hover {
+  background: map-get($vuce2-color, hover);
+}
+.color:active {
+  background: map-get($vuce2-color, active);
+}
+.color:disabled {
+  background: map-get($vuce2-color, disabled);
+}

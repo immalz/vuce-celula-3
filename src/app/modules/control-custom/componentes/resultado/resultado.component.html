@@ -1,0 +1,34 @@
+<div class="page">
+    <div class="sidebar">
+        a
+    </div>
+    <div class="content">
+
+        <vuce2-lib-breadcrumb
+            [items]="breadCrumbs">
+        </vuce2-lib-breadcrumb>
+
+        <div class="row">
+            <h1 class="w-75">Resultado de Evaluación</h1>
+            <vuce2-lib-select
+                [items]="modos"
+                class="w-25"
+                (change)="selectMode($event)"
+            ></vuce2-lib-select>
+        </div>
+
+        <!---TABS--->
+
+        <div class="mt-5">
+            <vuce2-lib-tab (tabEvent)="changeTab($event)" [contentSource]="tabs"></vuce2-lib-tab>
+        </div>
+
+        <div class="mt-5 transition">
+            <router-outlet></router-outlet>
+            
+        </div>
+        
+
+        <vuce2-lib-footer></vuce2-lib-footer>
+    </div>
+</div>

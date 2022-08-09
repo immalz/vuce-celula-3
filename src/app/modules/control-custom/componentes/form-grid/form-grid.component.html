@@ -1,0 +1,80 @@
+<div class="container-fluid mt-5">
+    <div class="page-header title text-center">
+        <h4>Grilla VUCE2</h4>
+        <button mat-stroked-button (click)="onLang('en')">EN</button>
+        <button mat-stroked-button (click)="onLang('es')">ES</button>
+    </div>
+    
+
+    <vuce2-lib-grid #grid 
+        [options]="options" 
+        [columns]="columns" 
+        [datasource]="datasource" 
+        [paging]="paging"
+        (onRefresh)="handlerRefresh($event)">
+
+        <ng-template vuce2LibGridCellTemplate="btnEdit" let-data='data' let-row='row'>
+            <vuce2-lib-action-btnEdit (click)="handlerEdit(row)" style="width: max-content;"></vuce2-lib-action-btnEdit>
+        </ng-template>
+        <ng-template vuce2LibGridCellTemplate="btnSelect" let-data='data' let-row='row'>
+            <span class="material-icons" (click)="''">
+                arrow_right_alt
+            </span>
+        </ng-template>
+
+        <ng-template vuce2LibGridCellTemplate="detailTemplate" let-data='data' let-row='row'>
+            <table>
+                <colgroup>
+                    <col width="10%">
+                    <col width="40%">
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="20%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <td>
+                            <span style="font-weight: 500;">Documento: </span>
+                        </td>
+                        <td>
+                            <span style="font-weight: 500;">Direccion: </span>
+                        </td>
+                        <td>
+                            <span style="font-weight: 500;">Celular: </span>
+                        </td>
+                        <td>
+                            <span style="font-weight: 500;">Representante Legal: </span>
+                        </td>
+                        <td>
+                            <span style="font-weight: 500;">Fax: </span>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span>RUC</span>
+                        </td>
+                        <td>
+                            <span>{{row.direccion}}</span>
+                        </td>
+                        <td>
+                            <!-- <span>DGM005 - {{row.name}}</span> -->
+                            <span>{{row.celular}}</span>
+                        </td>
+                        <td>
+                            <span></span>
+                        </td>
+                        <td>
+                            <span>{{row.fax}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+
+
+    </vuce2-lib-grid>
+    
+    
+</div>

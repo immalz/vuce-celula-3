@@ -1,0 +1,12 @@
+<mat-accordion class="example-headers-align" multi>
+    <vuce2-lib-accordion
+    *ngFor="let item of accordeon"
+      [title]="item.title"
+      [status]="'Conforme'"
+      [statusVisible]="statusVisible"
+      [image]="imageAccordion"
+    >
+      <ng-template vuce2LibContentTemplate="contentTemplate">
+      </ng-template>
+    </vuce2-lib-accordion>
+  </mat-accordion>

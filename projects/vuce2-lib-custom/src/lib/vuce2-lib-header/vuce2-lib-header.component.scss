@@ -1,0 +1,267 @@
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px; 
+   // width: 1348px;
+    //height: 86px;
+    min-height: 5.375rem;//86px;
+    left: 0px;
+    top: 0px;    
+    background: #FFFFFF;
+}
+
+.content-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    
+    position: static;
+    width: 570px;
+    height: 86px;
+    left: 0px;
+    top: 0px;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.content-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 8px 24px 8px 16px;
+    
+    // position: static;
+    // width: 398px;
+    // height: 86px;
+    // left: 1330px;
+    top: 0px;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+   // margin: 0px 371px;
+
+    
+}
+
+.notificacion{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: static;
+    width: 74.26px;
+    height: 29.5px;
+    left: 16px;
+    top: 28.25px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 58px;
+}
+
+.icon-vuce{
+    position: static;
+    width: 220px;
+    height: 31.3px;
+    left: 28px;    
+    top: 24.35px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 55px;
+}
+
+.icon-market{
+    position: static;
+    width: 32px;
+    height: 46.5px;
+    left: 0px;
+    top: 0px;    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 15px;
+}
+
+.icon-bell{
+    position: static;
+    width: 29.63px;
+    height: 29.5px;
+    left: 44.63px;
+    top: 0px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 15px;
+}
+
+.content-user{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    
+    position: static;
+    width: 225.74px;
+    height: 70px;
+    left: 148.26px;
+    top: 8px;  
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 58px;
+}
+.icon-user{
+    position: static;
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    top: 15px;    
+    //background: url(.jpg), #C4C4C4;
+    /* Red/Red-80 */  
+    
+    box-sizing: border-box;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 8px;
+}
+
+.sel-origen{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    
+    position: static;
+    width: 276px;
+    height: 45px;
+    left: 294px;
+    top: 20.5px;    
+    /* Inside auto layout */    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 5px;
+}
+
+.notify-badge{   
+    padding: .50em em;
+    font-size: 75%;  
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    top:60px;
+    background:red;
+    text-align: center;
+    border-radius: 50%;    
+    color:white;
+    padding:5px 10px;
+    font-size:15px;
+    width: 14.65px;
+    height: 13.65px;
+    position: absolute;
+    left: 14.98px;
+    bottom: 53.72px;
+}
+
+.user-label{
+    position: static;
+    width: 145.74px;
+    height: 24px;
+    left: 0px;
+    top: 15px;
+    /* H3/medium/roboto */
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    /* Dark/Dark-90 */
+    color: #060505;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.user-rol{
+    position: static;
+    width: 145.74px;
+    height: 16px;
+    left: 0px;
+    top: 39px;
+
+    /* Body 2/light/roboto */
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    display: block;
+    align-items: center;
+    /* Gray/Gray-90 */
+
+    color: #696868;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+.icon-arrow{
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 35.79%;
+    bottom: 33.33%;
+
+    /* Dark/Dark-70 */
+
+    background: #333333;
+}

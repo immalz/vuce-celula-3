@@ -1,0 +1,132 @@
+<vuce2-lib-header [usuario]="usuario"></vuce2-lib-header>
+<div style="display: flex; flex-direction: row">
+  <vuce2-lib-sidebar [modules]="modules"></vuce2-lib-sidebar>
+  <div style="display: flex; flex-direction: column">
+    <div style="width: 60%; margin: 10px; height: 300px">
+      <vuce2-lib-bienvenida
+        [nombre]="nombre"
+        [componente]="componente"
+        [imagen]="imagen"
+      ></vuce2-lib-bienvenida>
+    </div>
+    <div class="row"></div>
+    <div class="row">
+      <vuce2-lib-button-terciario
+        [texto]="'boton terciario'"
+        [icon]="'add_shopping_cart'"
+      >
+      </vuce2-lib-button-terciario>
+      <vuce2-lib-button-primary
+
+      [texto]="'Crear Solicitud'"
+      [icon]="'add'"
+    ></vuce2-lib-button-primary>
+      <vuce2-lib-button-primary
+        [largo]="'small'"
+        [texto]="'Crear Solicitud'"
+        [icon]="'add'"
+      >
+      </vuce2-lib-button-primary>
+      <vuce2-lib-button-primary
+        [largo]="'medium'"
+        [texto]="'Crear Solicitud'"
+        [icon]="'add'"
+      >
+      </vuce2-lib-button-primary>
+      <vuce2-lib-button-primary
+        [largo]="'large'"
+        [texto]="'Crear Solicitud'"
+        [icon]="'add'"
+      >
+      </vuce2-lib-button-primary>
+      <vuce2-lib-button-secundary
+        [texto]="'Crear Solicitud'"
+        [icon]="'add'"
+        [largo]="'small'"
+      >
+      </vuce2-lib-button-secundary>
+      <vuce2-lib-button-secundary
+        [texto]="'Crear Solicitud'"
+        [icon]="'add'"
+        [largo]="'medium'"
+      >
+      </vuce2-lib-button-secundary>
+      <vuce2-lib-button-secundary
+        [texto]="'Crear Solicitud'"
+        [icon]="'add'"
+        [largo]="'large'"
+      >
+      </vuce2-lib-button-secundary>
+    </div>
+    <div style="width: 35%; margin: 10px">
+      <vuce2-lib-card-title-subtitle-icon
+        *ngFor="let item of card"
+        [title]="item.title"
+        [subtitle]="'Dirección general de medicamentos, insumos y drogas'"
+        [iconRight]="'assets/image/iconRLink.svg'"
+        [icon]="'assets/image/icoLink.svg'"
+        [textButton]="'Continuar'"
+        [iconButton]="'arrow_forward'"
+        (valorEvent)="onValorEvent($event)"
+        [etiqueta]="'DIGEMID'"
+        [mostrar]="item.mostrar"
+        [items]="productos"
+        (mostrarEvent)="onMostrarEvent($event)"
+      >
+      </vuce2-lib-card-title-subtitle-icon>
+      <!-- <vuce2-lib-card-title-subtitle-icon [title]="'DIGEMID'"
+            [subtitle]="'Dirección general de medicamentos, insumos y drogas'"
+            [iconRight]="'assets/image/iconRLink.svg'"
+            [icon]="'assets/image/icoLink.svg'"
+            [textButton]="'Continuar'"
+            [iconButton]="'arrow_forward'"
+            (valorEvent)="onValorEvent($event)"
+            [etiqueta]="'DIGEMID'"
+            [mostrar]="valor"
+            (mostrarEvent)="onMostrarEvent($event)"
+            >
+            </vuce2-lib-card-title-subtitle-icon>
+            <vuce2-lib-card-title-subtitle-icon [title]="'DIGEMID'"
+            [subtitle]="'Dirección general de medicamentos, insumos y drogas'"
+            [iconRight]="'assets/image/iconRLink.svg'"
+            [icon]="'assets/image/icoLink.svg'"
+            [textButton]="'Continuar'"
+            [iconButton]="'arrow_forward'"
+            (valorEvent)="onValorEvent($event)"
+            [etiqueta]="'DIGEMID'"
+            [mostrar]="valor"
+            (mostrarEvent)="onMostrarEvent($event)"
+            >
+            </vuce2-lib-card-title-subtitle-icon> -->
+    </div>
+    <div style="width: 35%; margin: 10px">
+      <vuce2-lib-card-tupa
+        [title]="'TUPA 3'"
+        [subtitle]="'MNMO01'"
+        [description]="
+          'Autorizacion de importacion de residuos solidos no peligrosos'
+        "
+        [borradores]="'167'"
+        [pago]="'1.957% productos 10.2759% fibra'"
+        [plazo]="'5 dias productos 9 dias fibras'"
+        [prerequisito]="'N/A'"
+        [isButton]="false"
+        [textButton]="'Iniciar Tramite'"
+        [isComplete]="false"
+        [isPendiente]="true"
+      >
+      </vuce2-lib-card-tupa>
+    </div>
+    <vuce2-lib-tab [contentSource]="tab"></vuce2-lib-tab>
+  </div>
+
+  <vuce2-lib-menu [contentSource]="modulesMenu"></vuce2-lib-menu>
+</div>
+<vuce2-lib-link-icon [texto]="'Volver'"></vuce2-lib-link-icon>
+<vuce2-lib-footer> </vuce2-lib-footer>
+
+<!-- <vuce2-lib-button-primary [texto]="'Large Button'" [largo]="'large'" [disabled]="true"></vuce2-lib-button-primary>
+<vuce2-lib-button-primary [texto]="'Medium Button'" [largo]="'medium'" ></vuce2-lib-button-primary>
+<vuce2-lib-button-primary [texto]="'Medium Button'" [largo]="'medium'" [disabled]="true"></vuce2-lib-button-primary>
+<vuce2-lib-button-primary [texto]="'Small Button'" [largo]="'small'" ></vuce2-lib-button-primary>
+<vuce2-lib-button-primary [texto]="'Small Button'" [largo]="'small'" [disabled]="true"></vuce2-lib-button-primary> -->

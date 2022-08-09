@@ -1,0 +1,19 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Vuce2LibSidebarComponent } from './vuce2-lib-sidebar.component';
+import { Vuce2LibModulesModule } from "../vuce2-lib-modules";
+
+
+@NgModule({
+  declarations: [
+    Vuce2LibSidebarComponent
+  ],
+  imports: [
+    CommonModule,
+    Vuce2LibModulesModule
+  ],
+  exports: [
+    Vuce2LibSidebarComponent
+  ]
+})
+export class Vuce2LibSidebarModule { }

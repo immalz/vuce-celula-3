@@ -1,0 +1,103 @@
+/**
+    PALETA DE COLORES
+*/
+//Colores principales
+
+$main-red: #DA211C;
+$main-red-hover: #C2342D;
+$main-red-active: #A7241E;
+$main-red-disabled: rgba(218, 33, 28, 0.5);
+
+//vuce2-color-error
+
+$vuce2-color-error-color: red;
+
+//vuce2-color-tab
+
+$vuce2-color-tab-default: #C2342D;;
+
+//vuce2-color-bienvenida
+
+$vuce2-color-bienvenida-titulo:#333333;
+$vuce2-color-bienvenida-subtitulo:#6A6B6B;
+$vuce2-color-bienvenida-backgroundColor:white;
+
+//vuce2-color-grid
+
+$vuce2-color-grid-color: white;
+$vuce2-color-grid-header: #6A6B6B;
+$vuce2-color-grid-headerBoxShadow: #E7E7ED;
+$vuce2-color-grid-item: #F6F6F6;
+$vuce2-color-grid-itemBoxShadow: rgba(0, 0, 0, 0.25);
+
+//vuce2-color-breadcrumb
+
+$vuce2-color-breadcrumb-label: #030303;
+$vuce2-color-breadcrumb-backgroundColor: transparent;
+
+//vuce2-color-card
+
+$vuce2-color-card-backgroundColor: white;
+$vuce2-color-card-border: #DEDEDE;
+
+//$vuce2-color-card-info
+
+$vuce2-color-card-info-link: #6A6B6B;
+$vuce2-color-card-info-text: #726D6D;
+$vuce2-color-card-info-title: #101820;
+
+//vuce2-color-card-link-icon
+
+$vuce2-color-card-link-icon-backgroundColor: white;
+$vuce2-color-card-link-icon-border: #DEDEDE;
+$vuce2-color-card-link-icon-title: #1A1818;
+$vuce2-color-card-link-icon-link: #027ECC;
+$vuce2-color-card-link-icon-text: #333333;
+$vuce2-color-card-link-icon-hover: #E0F3FF;
+
+//vuce2-color-card-title-subtitle-icon
+
+$vuce2-color-card-title-subtitle-icon-backgroundColor: white;
+$vuce2-color-card-title-subtitle-icon-border: #DEDEDE;
+$vuce2-color-card-title-subtitle-icon-title: #1A1818;
+$vuce2-color-card-title-subtitle-icon-subtitle: #898890;
+$vuce2-color-card-title-subtitle-icon-hover: #E0F3FF;
+$vuce2-color-card-title-subtitle-icon-visited: rgba(224, 243, 255, 1);
+$vuce2-color-card-title-subtitle-icon-cardMayor: rgba(208, 208, 208, 1);
+
+//vuce2-color-radio-button
+
+$vuce2-color-radio-button-color: #E50019;
+
+//vuce2-color-pagination
+
+$vuce2-color-pagination-boxShadow: rgba(0, 0, 0, 0.25);
+$vuce2-color-pagination-backgroundColorItem: #F6F6F6;
+$vuce2-color-pagination-transparent: transparent;
+$vuce2-color-pagination-backgroundColor: #FFC9C8;
+$vuce2-color-pagination-color: #DA211C;
+$vuce2-color-pagination-colorHover: white;
+$vuce2-color-pagination-backgroundColorHover: #DA211C;
+$vuce2-color-pagination-pageItem: #333333;
+
+/** 
+    arreglos de colores 
+*/
+
+$vuce2-color:(primary: $main-red, hover: $main-red-hover , active:$main-red-active, disabled:$main-red-disabled);
+
+
+$vuce2-color-error: (color: $vuce2-color-error-color);
+$vuce2-color-tab: (default: $vuce2-color-tab-default);
+$vuce2-color-bienvenida:(titulo:$vuce2-color-bienvenida-titulo, subtitulo: $vuce2-color-bienvenida-subtitulo, backgroundColor: $vuce2-color-bienvenida-backgroundColor);
+$vuce2-color-grid: (color: $vuce2-color-grid-color,header: $vuce2-color-grid-header, headerBoxShadow: $vuce2-color-grid-headerBoxShadow, item:$vuce2-color-grid-item, itemBoxShadow:$vuce2-color-grid-itemBoxShadow);
+$vuce2-color-breadcrumb: (label:$vuce2-color-breadcrumb-label,backgroundColor: $vuce2-color-breadcrumb-backgroundColor);
+$vuce2-color-card: (backgroundColor: $vuce2-color-card-backgroundColor, border:$vuce2-color-card-border);
+$vuce2-color-card-info: (link: $vuce2-color-card-info-link, text: $vuce2-color-card-info-text, title: $vuce2-color-card-info-title);
+$vuce2-color-card-link-icon: (backgroundColor: $vuce2-color-card-link-icon-backgroundColor, border:$vuce2-color-card-link-icon-border, title:$vuce2-color-card-link-icon-title, link:$vuce2-color-card-link-icon-link, text:$vuce2-color-card-link-icon-text, hover: $vuce2-color-card-link-icon-hover);
+$vuce2-color-card-title-subtitle-icon:(backgroundColor: $vuce2-color-card-title-subtitle-icon-backgroundColor, border:$vuce2-color-card-title-subtitle-icon-border, title:$vuce2-color-card-title-subtitle-icon-title, subtitle: $vuce2-color-card-title-subtitle-icon-subtitle, hover: $vuce2-color-card-title-subtitle-icon-hover, visited: $vuce2-color-card-title-subtitle-icon-visited,cardMayor: $vuce2-color-card-title-subtitle-icon-cardMayor);
+$vuce2-color-radio-button: (color:$vuce2-color-radio-button-color);
+$vuce2-color-pagination:(boxShadow: $vuce2-color-pagination-boxShadow,backgroundColorItem: $vuce2-color-pagination-backgroundColorItem,transparent: $vuce2-color-pagination-transparent, backgroundColor:$vuce2-color-pagination-backgroundColor, color: $vuce2-color-pagination-color, colorHover: $vuce2-color-pagination-colorHover, backgroundColorHover: $vuce2-color-pagination-backgroundColorHover, pageItem: $vuce2-color-pagination-pageItem);
+
+
+
