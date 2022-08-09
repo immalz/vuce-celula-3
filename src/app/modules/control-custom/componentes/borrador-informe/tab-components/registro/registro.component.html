@@ -1,1 +1,40 @@
-<p>registro works!</p>
+<div class="container mt-3">
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="col-md-6">
+                <vuce2-lib-input-text formControlName="para" [etiqueta]="'Para'" [placeholder]="'Para'"
+                    [control]="para">
+                </vuce2-lib-input-text>
+            </div>
+            <div class="col-md-6">
+                <vuce2-lib-input-text formControlName="asunto" [etiqueta]="'Asunto'" [placeholder]="'Asunto'"
+                    [control]="asunto">
+                </vuce2-lib-input-text>
+            </div>
+            <div class="col-md-6">
+                <vuce2-lib-input-text formControlName="referencia" [etiqueta]="'Referencia'"
+                    [placeholder]="'Referencia'" [control]="referencia">
+                </vuce2-lib-input-text>
+            </div>
+            <div class="col-md-6">
+                <vuce2-lib-select [etiqueta]="'Motivo'" [items]="motivos" formControlName="motivo" [control]="motivo"
+                    [width]="'160px'" (change)="handlerChange($event)">
+                </vuce2-lib-select>
+            </div>
+            <div class="col-md-12">
+                <vuce2-lib-input-textarea [etiqueta]="'Detalle del Motivo'" [control]="detalle"
+                    formControlName="detalle">
+                </vuce2-lib-input-textarea>
+            </div>
+        </div>
+    </form>
+    <div class="row justify-content-md-center">
+        <div class="col col-lg-3">
+            <vuce2-lib-button-secundary [texto]="'Salir'" [largo]="'small'">
+            </vuce2-lib-button-secundary>
+        </div>
+        <div class="col col-lg-3">
+            <vuce2-lib-button-primary [texto]="'Vista Previa'" [largo]="'small'"></vuce2-lib-button-primary>
+        </div>
+    </div>
+</div>
