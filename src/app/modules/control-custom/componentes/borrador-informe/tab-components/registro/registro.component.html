@@ -17,7 +17,7 @@
                 </vuce2-lib-input-text>
             </div>
             <div class="col-md-6">
-                <vuce2-lib-select [etiqueta]="'Motivo'" [items]="motivos" formControlName="motivo" [control]="motivo"
+                <vuce2-lib-select [disabled]="Estado!='Estado'" [etiqueta]="'Motivo'" [items]="motivos" formControlName="motivo" [control]="motivo"
                     [width]="'160px'" (change)="handlerChange($event)">
                 </vuce2-lib-select>
             </div>

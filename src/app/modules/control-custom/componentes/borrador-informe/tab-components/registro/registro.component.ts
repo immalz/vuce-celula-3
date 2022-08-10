@@ -9,6 +9,7 @@ import { ISelectItem } from 'projects/vuce2-custom/src/public-api';
 })
 export class RegistroComponent implements OnInit {
   form: FormGroup;
+  Estado = 'Aceptado';
   constructor(private fb: FormBuilder) { }
   motivos: ISelectItem[] = [
     {

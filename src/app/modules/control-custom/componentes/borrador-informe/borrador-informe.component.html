@@ -25,7 +25,7 @@
         <div class="card p-4 mt-5">
             <div class=" mt-2 mb-2 d-flex justify-content-between align-items-center">
                 <h3>Datos del Informe</h3>
-                <h6 *ngIf="correlativoAutomatico" style="color: red">
+                <h6 *ngIf="correlativoAutomatico" style="color: #DA211C">
                     <button mat-flat-button color="warn">
                         <span class="material-icons">
                             open_in_browser
@@ -74,7 +74,6 @@
                 </div>
             </div>
         </div>
-
         <div class="d-flex justify-content-end mt-5 mb-5">
             <h6 style="color: red">
                 <button mat-flat-button color="warn">
@@ -84,19 +83,13 @@
                 </button> Guardar
             </h6>
         </div>
-
         <div class="mt-5">
             <vuce2-lib-tab (tabEvent)="changeTab($event)" [contentSource]="tabs"></vuce2-lib-tab>
         </div>
-
-
-
         <div class="row">
             <router-outlet></router-outlet>
         </div>
-
         <div class="buttons">
-
         </div>
     </div>
 </div>
