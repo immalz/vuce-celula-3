@@ -24,6 +24,7 @@ import { DetallesComponent } from './componentes/borrador-informe/tab-components
 import { RegistroComponent } from './componentes/borrador-informe/tab-components/registro/registro.component';
 import { InformeComponent } from './componentes/borrador-informe/tab-components/informe/informe.component';
 import { SubsanacionComponent } from './componentes/subsanacion/subsanacion.component';
+import { BandejaDePagosComponent } from './componentes/gestion-pagos/bandeja-de-pagos/bandeja-de-pagos.component';
 
 export const APP_CUSTOM_ROUTES: Routes = [
   {
@@ -79,6 +80,11 @@ export const APP_CUSTOM_ROUTES: Routes = [
   {
     path: 'subsanacion',
     component: SubsanacionComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'bandeja-de-pago',
+    component: BandejaDePagosComponent,
     pathMatch: 'full',
   },
   {

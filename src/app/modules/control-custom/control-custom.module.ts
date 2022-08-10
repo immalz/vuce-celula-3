@@ -75,6 +75,7 @@ import { InformeComponent } from './componentes/borrador-informe/tab-components/
 import { DetallesComponent } from './componentes/borrador-informe/tab-components/detalles/detalles.component';
 import { SubsanacionComponent } from './componentes/subsanacion/subsanacion.component';
 import { ModalInformesTecnicosNuevaSeccionComponent } from './componentes/modales/modal-informes-tecnicos-nueva-seccion/modal-informes-tecnicos-nueva-seccion.component';
+import { BandejaDePagosComponent } from './componentes/gestion-pagos/bandeja-de-pagos/bandeja-de-pagos.component';
 
 const vuce2Modules = [
   Vuce2LibTabStateModule,
@@ -150,7 +151,8 @@ const vuce2Modules = [
     InformeComponent,
     DetallesComponent,
     SubsanacionComponent,
-    ModalInformesTecnicosNuevaSeccionComponent
+    ModalInformesTecnicosNuevaSeccionComponent,
+    BandejaDePagosComponent
   ],
   imports: [
     CommonModule,
