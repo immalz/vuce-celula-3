@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ISelectItem } from 'projects/vuce2-custom/src/public-api';
 
 @Component({
   selector: 'app-registro',
@@ -6,10 +8,51 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent implements OnInit {
-
-  constructor() { }
-
+  form: FormGroup;
+  constructor(private fb: FormBuilder) { }
+  motivos: ISelectItem[] = [
+    {
+      id: '1',
+      text: 'No cumple con los requisitos de trámite',
+    },
+    {
+      id: '2',
+      text: 'No cumple con el marco normativo',
+    },
+    {
+      id: '3',
+      text: 'Otros',
+    },
+  ];;
   ngOnInit(): void {
+    this.CreateFirstForm();
   }
-
+  CreateFirstForm() {
+    this.form = this.fb.group({
+      para: new FormControl('', Validators.required),
+      referencia: new FormControl('', Validators.required),
+      asunto: new FormControl('', Validators.required),
+      motivo: new FormControl('', Validators.required),
+      detalle: new FormControl('', Validators.required),
+    });
+  }
+  get para() {
+    return this.form.controls['para'];
+  }
+  get asunto() {
+    return this.form.controls['asunto'];
+  }
+  get referencia() {
+    return this.form.controls['referencia'];
+  }
+  get motivo() {
+    return this.form.controls['referencia'];
+  }
+  get detalle() {
+    return this.form.controls['referencia'];
+  }
+  
+  handlerChange(e: any) {
+    console.log('e >>', e);
+  }
 }

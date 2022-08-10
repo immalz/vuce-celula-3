@@ -8,7 +8,6 @@ import { ControlCustomModule } from './modules/control-custom/control-custom.mod
 import { APP_ROUTES } from './app.routes';
 import { LayoutComponent } from './layout/layout.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

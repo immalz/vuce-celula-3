@@ -1,13 +1,69 @@
-<mat-accordion class="example-headers-align" multi>
+<div class="page">
+    <div class="sidebar">
+        a
+    </div>
+    <div class="content">
 
-    <vuce2-lib-accordion
-      [title]="'Datos del Solicitante'"
-      [status]="'Conforme'"
-      [image]="imageAccordion"
-    >
-      <ng-template vuce2LibContentTemplate="contentTemplate">
+        <vuce2-lib-breadcrumb
+            [items]="breadCrumbs">
+        </vuce2-lib-breadcrumb>
+
+        <div class="row">
+            <h1>Subsanación de Trámite</h1>
+    
+        </div>
+        <div class="row">
+            <vuce2-lib-select
+                [items]="modos"
+                class="w-25"
+                [control]="modo"
+                (change)="selectMode($event)"
+            ></vuce2-lib-select>
+        </div>
+
+        <!---FILTROS--->
+
+        <mat-accordion class="example-headers-align" multi>
+
+            <vuce2-lib-accordion
+              [title]="'Datos de Solicitud'"
+              [status]="'Conforme'"
+              [image]="imageAccordion"
+            >
+              <ng-template vuce2LibContentTemplate="contentTemplate">
+                <h4>Datos Personajes</h4>
+                <div class="row">
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Tipo de Documento:</p>
+                            <p>Actividad:</p>
+                        </div>
+                        <div class="col-md">
+                            <p>RUC</p>
+                            <p>Activo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Tipo de Documento:</p>
+                            <p>Actividad:</p>
+                        </div>
+                        <div class="col-md">
+                            <p>RUC</p>
+                            <p>Activo</p>
+                        </div>
+                    </div>
+                </div>
+              </ng-template>
+            </vuce2-lib-accordion>
         
-      </ng-template>
-    </vuce2-lib-accordion>
+        </mat-accordion>
+        
 
-  </mat-accordion>
+
+        <div class="buttons">
+
+        </div>
+    </div>
+</div>
