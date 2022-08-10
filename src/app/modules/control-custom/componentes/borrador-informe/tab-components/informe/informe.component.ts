@@ -20,6 +20,7 @@ export class InformeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   openModal(): void {
     const dialogRef = this.dialog.open(ModalInformesTecnicosNuevaSeccionComponent, {
       width:'700px',
