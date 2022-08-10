@@ -11,6 +11,8 @@ import { TableColumn } from 'projects/vuce2-lib-custom/src/public-api';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ISelectItem } from 'projects/vuce2-custom/src/public-api';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalInformesTecnicosVistaPreviaComponent } from '../../../modales/modal-informes-tecnicos-vista-previa/modal-informes-tecnicos-vista-previa.component';
 
 @Component({
   selector: 'app-detalles',
@@ -24,14 +26,16 @@ export class DetallesComponent implements OnInit {
     showRefresh: false,
   };
   form: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.CreateFirstForm();
   }
-  CreateFirstForm(){
+  CreateFirstForm() {
     this.form = this.fb.group({
-      record:  new FormControl('1', Validators.required),
+      record: new FormControl('1', Validators.required),
     })
   }
   public datasource: TableDataSource = (request: DatasourceParameters): Observable<DatasourceResult> => {
@@ -46,6 +50,7 @@ export class DetallesComponent implements OnInit {
     showPaging: true,
     showItemsPerPage: false
   }
+
   contentGuia() {
     return fromPromise(new Promise<DatasourceResult>(
       (resolve) => {
@@ -126,5 +131,13 @@ export class DetallesComponent implements OnInit {
   }
   handlerChange(e: any) {
     console.log('e >>', e);
+  }
+  openModalVistaPrevia(): void {
+    const dialogRef = this.dialog.open(ModalInformesTecnicosVistaPreviaComponent, {
+      width: 'calc(80vw - 200px)',
+      disableClose: true,
+      hasBackdrop: true,
+      panelClass: 'dialog'
+    });
   }
 }
