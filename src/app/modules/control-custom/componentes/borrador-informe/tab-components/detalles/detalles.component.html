@@ -1,1 +1,91 @@
-<p>detalles works!</p>
+<div class="container mt-3 p-1">
+    <div class="card">
+        <div class="row">
+            <div class="col  m-3">
+                <div class="text-right">
+                    <h6 style="color: #DA211C;">
+                        <button mat-flat-button class="p-0" color="warn">
+                            <span class="material-icons ">
+                                add
+                            </span>
+                        </button>
+                        Adjuntar Documentos
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="row m-3">
+            <vuce2-lib-grid [options]="options" [columns]="columns" [datasource]="datasource" [paging]="paging"
+                [borderHeader]="true" (onRefresh)="handlerRefresh($event)">
+                <!-- 
+                <ng-template vuce2LibGridCellTemplate="Estado" let-data='data' let-row='row'>
+                    <button class="state">
+                        {{row.descripcion}}
+                    </button>
+                </ng-template>
+                <ng-template vuce2LibGridCellTemplate="Estado" let-data='data' let-row='row'>
+                    <button  class="state">
+                        {{row.tamano}}
+                    </button>
+                </ng-template>
+                <ng-template vuce2LibGridCellTemplate="Estado" let-data='data' let-row='row'>
+                    <button class="state">
+                        {{row.formato}}
+                    </button>
+                </ng-template>
+                <ng-template vuce2LibGridCellTemplate="Estado" let-data='data' let-row='row'>
+                    <button [ngClass]="row.Estado === 'Pendiente' ? 'no_assign' : 'assign'" class="state">
+                        {{row.fecha}}
+                    </button>
+                </ng-template> -->
+
+                <ng-template vuce2LibGridCellTemplate="accion" let-data='data' let-row='row'>
+                    <span class="material-icons" style="color: #DA211C; cursor:pointer">
+                        delete_outline
+                    </span>
+                </ng-template>
+
+            </vuce2-lib-grid>
+        </div>
+        <div class="row m-4">
+            <div class="card">
+                <div class="row pt-2 pb-2">
+                    <div class="col col-lg-12">
+                        <h4>Validación de Estado del Administrado</h4>
+                    </div>
+                </div>
+                <form [formGroup]="form">
+                    <div class="row justify-content-center pt-1">
+                        <div class="col col-lg-2 text-center">
+                            <p style="font-weight: bold;">Récord</p>
+                        </div>
+                        <div class="col col-lg-3">
+                            <vuce2-lib-select [etiqueta]="'Validar'" [items]="records" formControlName="record"
+                                [control]="record" [width]="'160px'" (change)="handlerChange($event)">
+                            </vuce2-lib-select>
+                        </div>
+                        <div class="col col-lg-2">
+                            <vuce2-lib-button-primary [texto]="'Validar'" [largo]="'small'">
+                            </vuce2-lib-button-primary>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-lg-6">
+                            <p  class="text-center" style="color: #DA211C;">(*) La validación de la situación del administrado referencia a
+                                los antecedentes penales, policiales y judiciales.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center mt-5 mb-3">
+        <div class="col col-lg-3">
+            <vuce2-lib-button-secundary [texto]="'Salir'" [largo]="'small'">
+            </vuce2-lib-button-secundary>
+        </div>
+        <div class="col col-lg-3">
+            <vuce2-lib-button-primary [texto]="'Vista Previa'" [largo]="'small'"></vuce2-lib-button-primary>
+        </div>
+    </div>
+</div>

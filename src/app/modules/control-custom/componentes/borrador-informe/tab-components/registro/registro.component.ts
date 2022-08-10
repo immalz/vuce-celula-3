@@ -46,12 +46,12 @@ export class RegistroComponent implements OnInit {
     return this.form.controls['referencia'];
   }
   get motivo() {
-    return this.form.controls['referencia'];
+    return this.form.controls['motivo'];
   }
   get detalle() {
-    return this.form.controls['referencia'];
+    return this.form.controls['detalle'];
   }
-  
+
   handlerChange(e: any) {
     console.log('e >>', e);
   }
