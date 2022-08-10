@@ -1,1 +1,76 @@
-<p>modal-informes-tecnicos-nueva-seccion works!</p>
+<button class="close" mat-button (click)="onNoClick()">X</button>
+<div class="container" style="max-height: calc(100vh - 50px); overflow-y: auto">
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h4 class="text-center" style="font-weight: bold;">
+                Detalles de Sección
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-5">
+            <p style="font-weight: bold;">
+                Opciones de Sección
+            </p>
+        </div>
+        <div class="col"></div>
+        <div class="col col-sm-3 text-right">
+            <div class="text-right">
+                <h6 style="color: red">
+                    <button  mat-flat-button class="p-0" color="warn">
+                        <span class="material-icons">
+                            delete_outline
+                        </span>
+                    </button>
+                    Eliminar
+                </h6>
+            </div>
+        </div>
+        <div class="col col-sm-3 text-right" style="vertical-align: middle;">
+            <mat-slide-toggle style="color: red">Desahibiltar</mat-slide-toggle>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-12">
+                    <vuce2-lib-input-text formControlName="titulo" [etiqueta]="'Título'" [placeholder]="'Título'"
+                        [control]="titulo">
+                    </vuce2-lib-input-text>
+                </div>
+                <div class="col-12">
+                    <vuce2-lib-input-textarea  rows="14" cols="50" style="min-height: 300px;" formControlName="detalle"
+                        [etiqueta]="'Detalle'" [placeholder]="'Detalle'" [control]="detalle">
+                    </vuce2-lib-input-textarea>
+                    <!-- <vuce2-lib-input-textarea [etiqueta]="'Detalle'" [control]="detalle" formControlName="detalle">
+                </vuce2-lib-input-textarea> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col col-sm-3 text-right">
+                    <div class="text-right">
+                        <h6 style="color: red">
+                            <button mat-flat-button class="p-0" color="warn">
+                                <span class="material-icons ">
+                                    compare_arrows
+                                </span>
+                            </button>
+                            Importar
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row justify-content-md-center mt-3 mb-1">
+        <div class="col col-lg-3" (click)="onNoClick()">
+            <vuce2-lib-button-secundary [texto]="'Cancelar'" [largo]="'small'">
+            </vuce2-lib-button-secundary>
+        </div>
+        <div class="col col-lg-3">
+            <vuce2-lib-button-primary [texto]="'Guardar'" [largo]="'small'"></vuce2-lib-button-primary>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.cdk-overlay-pane.dialog {
+    position: relative!important;
+}
+.close.mat-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(100%, -100%);
+    background: #DA211C;;
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+  }
+  

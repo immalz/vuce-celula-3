@@ -111,7 +111,10 @@ export class DocumentoResolutivoComponent implements OnInit {
   get modo() {
     return this.formFilter.controls['modos'];
   }
-
+  get validar() {
+    return this.formFilter.controls['validar'];
+  }
+  
   public options: TableOptions = {
     className: '',//['table-striped'],
     language: "es",
