@@ -40,5 +40,16 @@
         font-size: 14px;
         font-weight: bold;
         padding: 5px 20px;
+        width: 110px;
+
+    }
+    
+    .state.assign {
+        background: #a7ebce;
+        color:#2f8445;
+    }
+    .state.no_assign {
+        background: #dbdbdb;
+        color:#6a6b6b;
     }
 }

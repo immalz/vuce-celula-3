@@ -79,6 +79,7 @@ import { ModalInformesTecnicosNuevaSeccionComponent } from './componentes/modale
 import { ModalInformesTecnicosNuevaSeccionEliminarComponent } from './componentes/modales/modal-informes-tecnicos-nueva-seccion-eliminar/modal-informes-tecnicos-nueva-seccion-eliminar.component';
 import { ModalInformesTecnicosVistaPreviaComponent } from './componentes/modales/modal-informes-tecnicos-vista-previa/modal-informes-tecnicos-vista-previa.component';
 import { ModalInformesTecnicosPasarFirmarComponent } from './componentes/modales/modal-informes-tecnicos-pasar-firmar/modal-informes-tecnicos-pasar-firmar.component';
+import { ModalRegistroComponent } from './componentes/gestion-pagos/modal-registro/modal-registro.component';
 
 const vuce2Modules = [
   Vuce2LibTabStateModule,
@@ -158,7 +159,8 @@ const vuce2Modules = [
     ModalInformesTecnicosNuevaSeccionEliminarComponent,
     ModalInformesTecnicosVistaPreviaComponent,
     ModalInformesTecnicosPasarFirmarComponent,
-    BandejaDePagosComponent
+    BandejaDePagosComponent,
+    ModalRegistroComponent
   ],
   imports: [
     CommonModule,

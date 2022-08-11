@@ -88,6 +88,72 @@
             </div>
         </div>
 
+        <!--TABLA-->
+
+        <vuce2-lib-grid 
+        [options]="options" 
+        [columns]="columns" 
+        [datasource]="datasource" 
+        [paging]="paging"
+        [borderHeader]="true"
+        (onRefresh)="handlerRefresh($event)">
+
+       
+        <ng-template vuce2LibGridCellTemplate="icon" let-data='data' let-row='row'>
+            <span style="color: #5a95fd;" class="material-icons" (click)="''">
+                info
+            </span>
+        </ng-template>
+
+        <ng-template vuce2LibGridCellTemplate="acciones" let-data='data' let-row='row'>
+            <span style="color: #df4c47; cursor: pointer" class="material-icons" (click)="openModal(row)">
+                payment
+            </span>
+        </ng-template>
+
+        <ng-template vuce2LibGridCellTemplate="estado" let-data='data' let-row='row'>
+            <button [ngClass]="row.estado !== 'Pagado' ? 'no_assign' : 'assign'" class="state">
+                {{row.estado}}
+            </button>
+        </ng-template>
+
+        <ng-template vuce2LibGridCellTemplate="detailTemplate" let-data='data' let-row='row'>
+            <div class="row">
+                <div class="col-sm row">
+                    <div class="col-sm">
+                        <p style="font-weight: bold;">Tipo de Documento:</p>
+                        <p style="font-weight: bold;">N° de Documento:</p>
+                        <p style="font-weight: bold;">N° de Operación:</p>
+                        <p style="font-weight: bold;">Importe Total:</p>
+                        <p style="font-weight: bold;">Fecha de Operación:</p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="text-muted">Texto de Prueba</p>
+                        <p class="text-muted">Texto de Prueba</p>
+                        <p class="text-muted">Texto de Prueba</p>
+                        <p class="text-muted">Texto de Prueba</p>
+                        <p class="text-muted">Texto de Prueba</p>
+                    </div>
+                </div>
+
+                <div class="col-sm row">
+                    <div class="col-sm">
+                        <p style="font-weight: bold;">Tupa:</p>
+                        <p style="font-weight: bold;">Fecha de Vigencia:</p>
+                        <p style="font-weight: bold;">Estado del Trámite:</p>
+                        <p style="font-weight: bold;">Conciliado:</p>
+                    </div>
+                    <div class="col-sm">
+                        <p class="text-muted">Texto de Prueba</p>
+                        <p class="text-muted">Texto de Prueba</p>
+                        <p class="text-muted">Texto de Prueba</p>
+                        <p class="text-muted">Texto de Prueba</p>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </vuce2-lib-grid>
+
 
 
         <div class="buttons">

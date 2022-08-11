@@ -1,0 +1,74 @@
+<div class="total">
+    
+<h1>Registro de Devolucíon</h1>
+
+<h3 class="mt-3 mb-3">Datos del Administrado</h3>
+
+<div class="data">
+    <div class="data__content">
+        <div>
+            <p>Datos del Administrado:</p>
+            <span class="text-muted">Marco Polo Giraldo</span>
+        </div>
+        <div>
+            <p>Monto:</p><span class="text-muted">S/1500.00</span>
+        </div>
+    </div>
+    <div class="data__content">
+        <div>
+            <p>Orden de Pago:</p><span class="text-muted">18273512</span>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-3 mb-3">Datos de la Devolución</h3>
+
+<div class="data" [formGroup]="form">
+    <div class="data__content area1">
+        <div>
+            <vuce2-lib-input-calendar
+                class="inputFull"
+                formControlName="fecha"
+                [etiqueta]="'Fecha de Devolución'"
+                [control]="fecha"
+            ></vuce2-lib-input-calendar>
+        </div>
+        <div>
+            <vuce2-lib-select
+                class="inputFull"
+                [etiqueta]="'Motivo'"
+                [items]="motivos"
+                formControlName="producto"
+                [control]="motivo"
+            > <!--(change)="handlerChange($event)"-->
+            </vuce2-lib-select>
+        </div>
+    </div>
+    <div class="data__content area2">
+        <div>
+            <vuce2-lib-select
+                class="inputFull"
+                [etiqueta]="'Modalidades'"
+                [items]="modalidades"
+                formControlName="modalidad"
+                [control]="modalidad"
+            >
+            </vuce2-lib-select>
+        </div>
+    </div>
+    <div class="data__content textarea">
+        <vuce2-lib-input-textarea 
+            [etiqueta]="'Detalle del Motivo'"
+            [control]="detalle"
+            formControlName="detalle"
+        >
+        </vuce2-lib-input-textarea>
+    </div>
+    <div class="buttons">
+        <vuce2-lib-button-secundary class="buttons__btn" [texto]="'Cancelar'" [largo]="'small'" (click)="cancelar()">
+        </vuce2-lib-button-secundary>
+        <vuce2-lib-button-primary class="buttons__btn" [texto]="'Guardar'" [largo]="'small'"></vuce2-lib-button-primary>
+    </div>
+</div>
+
+</div>
