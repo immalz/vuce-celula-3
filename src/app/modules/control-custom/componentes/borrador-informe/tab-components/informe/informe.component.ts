@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalInformesTecnicosNuevaSeccionComponent } from '../../../modales/modal-informes-tecnicos-nueva-seccion/modal-informes-tecnicos-nueva-seccion.component';
+import { ModalInformesTecnicosVistaPreviaComponent } from '../../../modales/modal-informes-tecnicos-vista-previa/modal-informes-tecnicos-vista-previa.component';
 
 @Component({
   selector: 'app-informe',
@@ -24,6 +25,14 @@ export class InformeComponent implements OnInit {
   openModal(): void {
     const dialogRef = this.dialog.open(ModalInformesTecnicosNuevaSeccionComponent, {
       width:'700px',
+      disableClose: true,
+      hasBackdrop: true,
+      panelClass: 'dialog'
+    });
+  }
+  openModalVistaPrevia(): void {
+    const dialogRef = this.dialog.open(ModalInformesTecnicosVistaPreviaComponent, {
+      width:'calc(80vw - 200px)',
       disableClose: true,
       hasBackdrop: true,
       panelClass: 'dialog'

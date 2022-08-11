@@ -1,1 +1,24 @@
-<p>modal-informes-tecnicos-vista-previa works!</p>
+<div class="container" style="max-height: calc(100vh - 50px); overflow-y: auto">
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h4 class="text-left" style="font-weight: bold;">
+                PDF
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-12 text-center">
+            <img  src="../../../../../../assets/image/gob.webp">
+        </div>
+    </div>
+    <div class="row justify-content-md-center mt-1  mb-1">
+        <div class="col col-lg-4" (click)="onNoClick()">
+            <vuce2-lib-button-secundary [texto]="'Cancelar'" [largo]="'small'">
+            </vuce2-lib-button-secundary>
+        </div>
+        <div class="col col-lg-4" (click)="onClick()">
+            <vuce2-lib-button-primary [texto]="'Pasar a Firmar'" [largo]="'small'"></vuce2-lib-button-primary>
+        </div>
+    </div>
+</div>

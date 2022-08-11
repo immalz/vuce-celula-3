@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ISelectItem } from 'projects/vuce2-custom/src/public-api';
+import { ModalInformesTecnicosVistaPreviaComponent } from '../../../modales/modal-informes-tecnicos-vista-previa/modal-informes-tecnicos-vista-previa.component';
 
 @Component({
   selector: 'app-registro',
@@ -10,7 +12,9 @@ import { ISelectItem } from 'projects/vuce2-custom/src/public-api';
 export class RegistroComponent implements OnInit {
   form: FormGroup;
   Estado = 'Aceptado';
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private dialog: MatDialog) { }
   motivos: ISelectItem[] = [
     {
       id: '1',
@@ -55,5 +59,13 @@ export class RegistroComponent implements OnInit {
 
   handlerChange(e: any) {
     console.log('e >>', e);
+  }
+  openModalVistaPrevia(): void {
+    const dialogRef = this.dialog.open(ModalInformesTecnicosVistaPreviaComponent, {
+      width: 'calc(80vw - 200px)',
+      disableClose: true,
+      hasBackdrop: true,
+      panelClass: 'dialog'
+    });
   }
 }
