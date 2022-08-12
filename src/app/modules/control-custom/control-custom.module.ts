@@ -84,6 +84,8 @@ import { SegundaOpinionComponent } from './componentes/segunda-opinion/segunda-o
 import { ModalDatosDeTramiteComponent } from './componentes/modales/modal-datos-de-tramite/modal-datos-de-tramite.component';
 import { ModalEvaluacionTramiteComponent } from './componentes/modales/modal-evaluacion-tramite/modal-evaluacion-tramite.component';
 import { ModalConformidadSegundaOpinionComponent } from './componentes/modales/modal-conformidad-segunda-opinion/modal-conformidad-segunda-opinion.component';
+import { BandejaDePagosEntidadComponent } from './componentes/gestion-pagos/bandeja-de-pagos-entidad/bandeja-de-pagos-entidad.component';
+import { ModalBandejaDePagosEntidadDescargaComponent } from './componentes/modales/modal-bandeja-de-pagos-entidad-descarga/modal-bandeja-de-pagos-entidad-descarga.component';
 
 const vuce2Modules = [
   Vuce2LibTabStateModule,
@@ -168,7 +170,9 @@ const vuce2Modules = [
     SegundaOpinionComponent,
     ModalDatosDeTramiteComponent,
     ModalEvaluacionTramiteComponent,
-    ModalConformidadSegundaOpinionComponent
+    ModalConformidadSegundaOpinionComponent,
+    BandejaDePagosEntidadComponent,
+    ModalBandejaDePagosEntidadDescargaComponent
   ],
   imports: [
     CommonModule,

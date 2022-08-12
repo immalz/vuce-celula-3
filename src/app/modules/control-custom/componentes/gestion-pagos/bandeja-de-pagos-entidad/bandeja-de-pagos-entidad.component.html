@@ -1,0 +1,149 @@
+<div class="page">
+    <div class="sidebar">
+        a
+    </div>
+    <div class="content">
+
+        <vuce2-lib-breadcrumb [items]="breadCrumbs">
+        </vuce2-lib-breadcrumb>
+
+        <div class="row">
+            <h1>Bandeja de Pagos</h1>
+
+        </div>
+
+        <span class="text-muted">Buscar por n° de Orden, Fecha de Operación, Rango de Fechas, Canal de Pago o
+            Estado</span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 mt-4 mb-1" style="color: #DA211C">
+                    <div class="row justify-content-md-end">
+                        <h6 class="col-lg-3 mt-4 mb-4">
+                            <button style="background-color: #DA211C" mat-flat-button color="warn">
+                                <span class="material-icons">
+                                    save_alt
+                                </span>
+                            </button> Descargar reporte
+                        </h6>
+                        <!-- <div class="col col-lg-3 g-0 p-0" style="color: red">
+                    </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---FILTROS--->
+
+        <div class="card mt-1 mb-5">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    Filtros de Búsqueda
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <form [formGroup]="formFilter" class="accordion-body">
+                    <div class="row">
+                        <div class="col col-lg-4">
+                            <vuce2-lib-input-text formControlName="formato"
+                                [placeholder]="'N° Trámite, Orden de Pago, Expediente'" [control]="formato"
+                                [etiqueta]="'N° Trámite, Orden de Pago, Expediente'" [sufijo]="'search'">
+                            </vuce2-lib-input-text>
+                        </div>
+                        <div class="col col-lg-3">
+                            <vuce2-lib-select [items]="estados" formControlName="estado" [etiqueta]="'Canal de Pago'"
+                                [control]="estado" (change)="handlerChange($event)">
+                            </vuce2-lib-select>
+                        </div>
+                        <div class="col col-lg-2">
+                            <vuce2-lib-select [items]="estados" formControlName="estado" [etiqueta]="'Estado'"
+                                [control]="estado" (change)="handlerChange($event)">
+                            </vuce2-lib-select>
+                        </div>
+                        <div class="col col-lg-2">
+                            <vuce2-lib-button-primary [texto]="'Buscar'" [icon]="''"></vuce2-lib-button-primary>
+                        </div>
+                        <div class="col col-lg-1">
+                            <button mat-stroked-button color="warn" (click)="showMoreFilter = !showMoreFilter">
+                                <mat-icon>filter_list</mat-icon>
+                            </button>
+                        </div>
+                        <div class="col col-lg-3" *ngIf="showMoreFilter">
+                            <vuce2-lib-input-calendar formControlName="fecha" [etiqueta]="'Fecha'" [control]="fecha">
+                            </vuce2-lib-input-calendar>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--TABLA-->
+        <div>
+            <vuce2-lib-grid [options]="options" [columns]="columns" [datasource]="datasource" [paging]="paging"
+                [borderHeader]="true" (onRefresh)="handlerRefresh($event)">
+
+
+                <ng-template vuce2LibGridCellTemplate="icon" let-data='data' let-row='row'>
+                    <span style="color: #5a95fd;" class="material-icons" (click)="''">
+                        save_alt
+                    </span>
+                </ng-template>
+
+                <ng-template vuce2LibGridCellTemplate="acciones" let-data='data' let-row='row'>
+                    <span style="color: #DA211C; cursor: pointer;padding-right: 5px;" class="material-icons"
+                        (click)="descargar(row)">
+                        save_alt
+                    </span>
+                    <span style="color: #DA211C; cursor: pointer" class="material-icons">
+                        block
+                    </span>
+                </ng-template>
+
+                <ng-template vuce2LibGridCellTemplate="estado" let-data='data' let-row='row'>
+                    <button [ngClass]="row.estado !== 'Pagado' ? 'no_assign' : 'assign'" class="state">
+                        {{row.estado}}
+                    </button>
+                </ng-template>
+
+                <ng-template vuce2LibGridCellTemplate="detailTemplate" let-data='data' let-row='row'>
+                    <div class="row">
+                        <div class="col-sm row">
+                            <div class="col-sm">
+                                <p style="font-weight: bold;">Fecha de Ceneración:</p>
+                                <p style="font-weight: bold;">Fecha de Operación:</p>
+                                <p style="font-weight: bold;">Procedimiento:</p>
+                                <p style="font-weight: bold;">Estado Trámite:</p>
+                            </div>
+                            <div class="col-sm">
+                                <p class="text-muted">Texto de Prueba</p>
+                                <p class="text-muted">Texto de Prueba</p>
+                                <p class="text-muted">Texto de Prueba</p>
+                                <p class="text-muted">Texto de Prueba</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm row">
+                            <div class="col-sm">
+                                <p style="font-weight: bold;">Tupa:</p>
+                                <p style="font-weight: bold;">Canal:</p>
+                                <p style="font-weight: bold;">Formato:</p>
+                                <p style="font-weight: bold;">Nro de expediente:</p>
+                            </div>
+                            <div class="col-sm">
+                                <p class="text-muted">Texto de Prueba</p>
+                                <p class="text-muted">Texto de Prueba</p>
+                                <p class="text-muted">Texto de Prueba</p>
+                                <p class="text-muted">Texto de Prueba</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </vuce2-lib-grid>
+        </div>
+        <span style="color:#DA211C">
+            (*)Los trámites que se encuentren en los estados "XXX" solo se visualizarán en la pantalla por un rango de
+            tiempo de 1 año.
+        </span>
+    </div>
+</div>
