@@ -93,13 +93,21 @@
             </ng-template>
 
             <ng-template vuce2LibGridCellTemplate="acciones" let-data='data' let-row='row'>
-                <span style="color: #df4c47;" class="material-icons" (click)="goToDetail(row)">
+                <span style="cursor: pointer; color: #df4c47;" class="material-icons" (click)="goToDetail(row)">
                     find_in_page
                 </span>
             </ng-template>
 
             <ng-template vuce2LibGridCellTemplate="Estado" let-data='data' let-row='row'>
-                <button [ngClass]="row.Estado === 'Pendiente' ? 'no_assign' : 'assign'" class="state">
+                <button
+                    [ngClass]="row.Estado === 'Trámite por evaluar' ? 'no_assign' : 'assign'" class="state"
+                    [ngClass]="{
+                        'no_assign':row.Estado === 'Trámite por evaluar',
+                        'observer': row.Estado === 'Trámite en proceso de evaluación' || row.Estado === 'Trámite en proceso de inspección y finalizada',
+                        'assign':row.Estado === 'Trámite con evaluación finalizada',
+                        'warn':row.Estado === 'Tramite con correción de documentos'
+                        }"
+                    >
                     {{row.Estado}}
                 </button>
             </ng-template>
@@ -109,10 +117,14 @@
                     <div class="col-sm row">
                         <div class="col-sm">
                             <p style="font-weight: bold;">Nombre:</p>
-                            <p style="font-weight: bold;">Plazo del Tramite:</p>
-                            <p style="font-weight: bold;">RUC:</p>
+                            <p style="font-weight: bold;">Formato:</p>
+                            <p style="font-weight: bold;">Evaluador:</p>
+                            <p style="font-weight: bold;">Inicio Trámite:</p>
+                            <p style="font-weight: bold;">Solicitado por:</p>
                         </div>
                         <div class="col-sm">
+                            <p class="text-muted">Texto de Prueba</p>
+                            <p class="text-muted">Texto de Prueba</p>
                             <p class="text-muted">Texto de Prueba</p>
                             <p class="text-muted">Texto de Prueba</p>
                             <p class="text-muted">Texto de Prueba</p>
@@ -121,11 +133,15 @@
 
                     <div class="col-sm row">
                         <div class="col-sm">
-                            <p style="font-weight: bold;">Nombre:</p>
-                            <p style="font-weight: bold;">Plazo del Tramite:</p>
+                            <p style="font-weight: bold;">Estado:</p>
+                            <p style="font-weight: bold;">Expediente:</p>
                             <p style="font-weight: bold;">RUC:</p>
+                            <p style="font-weight: bold;">Fecha de Actualizacíon:</p>
+                            <p style="font-weight: bold;">Plazo del Trámite:</p>
                         </div>
                         <div class="col-sm">
+                            <p class="text-muted">Texto de Prueba</p>
+                            <p class="text-muted">Texto de Prueba</p>
                             <p class="text-muted">Texto de Prueba</p>
                             <p class="text-muted">Texto de Prueba</p>
                             <p class="text-muted">Texto de Prueba</p>

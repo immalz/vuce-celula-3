@@ -1,0 +1,24 @@
+.full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .btnModal {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .btnModal__btn {
+        width: 150px;
+    }
+}
+
+.full p{
+    margin: 0;
+}
+
+.full .redtext {
+    color: red;
+}

@@ -1,0 +1,74 @@
+
+
+// @import "../../../../../projects/vuce2-lib-custom/src/lib/assets/variables/variables.component.scss";
+
+.page {
+    width: 100%;
+    height: calc(100vh - 58px);
+    display: flex;
+    background: #f8f8f8;
+    .sidebar {
+        width: 300px;
+        height: 100%;
+        background: #242424;
+    }
+    .content {
+        width: calc(100% - 300px);
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .evaluador {
+        font-weight: bold;
+        color:#027ecc
+    }
+
+    .canal {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background: #fff4ec;
+        font-size: 14px;
+    }
+
+    .canal span {
+        color: #b95000;
+
+    }
+
+    .message {
+        background-color: #b8ddff;
+        color: #5187e3;
+        width: auto;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-left: 20px;
+        border-radius: 10px;
+    }
+
+    .state {
+        width: 182px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px 20px;
+        margin: auto;
+    }    
+
+    .state.aprobado {
+        background: #a7ebce;
+        color:#2f8445;
+    }
+    .state.rechazado {
+        background: #f08f97;
+        color:#842f49;
+    }
+    .state.transmitir {
+        background: #dbdbdb;
+        color:#6a6b6b;
+    }
+}

@@ -1,0 +1,30 @@
+<div [formGroup]="modalForm" class="full">
+    <div class="full__title">
+        <h2>Conformidad</h2>
+        <vuce2-lib-select
+            [control]="conformidad"
+            [formControlName]="'Conformidad'"
+            [etiqueta]="'Conformidad'"
+            [items]="items"
+        >
+        </vuce2-lib-select>
+    </div>
+    <div class="full__content mt-3 mb-3">
+        <vuce2-lib-input-textarea class="inputArea" [etiqueta]="'mensaje'" [control]="mensaje"
+                    formControlName="mensaje">
+        </vuce2-lib-input-textarea>
+    </div>
+
+    <div class="full__checkbox">
+        <vuce2-lib-check-box
+            [textValue]="'Solicitar Opinión'"
+        >
+        </vuce2-lib-check-box>
+        <p class="message"><span class="material-icons">info</span> Seleccione si se necesita la opinión de otro evaluador.</p>
+    </div>
+    <div class="full__btns">
+        <vuce2-lib-button-secundary (click)="close()" class="btnModal__btn" [texto]="'Salir'" [largo]="'small'">
+        </vuce2-lib-button-secundary>
+        <vuce2-lib-button-primary (click)="navigate()" class="btnModal__btn" [texto]="'Vista Previa'" [largo]="'small'"></vuce2-lib-button-primary>
+    </div>
+</div>

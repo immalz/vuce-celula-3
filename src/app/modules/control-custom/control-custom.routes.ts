@@ -1,3 +1,4 @@
+import { SegundaOpinionComponent } from './componentes/segunda-opinion/segunda-opinion.component';
 
 import { Routes } from '@angular/router';
 import { BienvenidaComponent } from './componentes/bienvenida/bienvenida.component';
@@ -115,5 +116,10 @@ export const APP_CUSTOM_ROUTES: Routes = [
       {path: 'informes', component: InformesComponent},
       {path: 'documentos', component: DocumentosComponent},
     ]
+  },
+  {
+    path: 'segunda-opinion',
+    component: SegundaOpinionComponent,
+    pathMatch: 'full'
   },
 ];

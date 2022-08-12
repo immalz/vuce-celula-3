@@ -1,3 +1,5 @@
+import { MatDialog } from '@angular/material/dialog';
+import { ModalEvaluacionTramiteComponent } from './../componentes/modales/modal-evaluacion-tramite/modal-evaluacion-tramite.component';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -66,11 +68,25 @@ export class DatosGeneralTramiteComponent implements OnInit {
   ];
 
   constructor(
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
     this.router.navigate([`/datos-generales`])
+  }
+
+  goToDetail(): void {
+    const dialogRef = this.dialog.open(ModalEvaluacionTramiteComponent, {
+      width: '450px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      if(result) {
+      this.router.navigate(['/segunda-opinion']);
+      }
+    });
   }
 
   changeTab(tab): any {

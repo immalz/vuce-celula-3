@@ -80,6 +80,10 @@ import { ModalInformesTecnicosNuevaSeccionEliminarComponent } from './componente
 import { ModalInformesTecnicosVistaPreviaComponent } from './componentes/modales/modal-informes-tecnicos-vista-previa/modal-informes-tecnicos-vista-previa.component';
 import { ModalInformesTecnicosPasarFirmarComponent } from './componentes/modales/modal-informes-tecnicos-pasar-firmar/modal-informes-tecnicos-pasar-firmar.component';
 import { ModalRegistroComponent } from './componentes/gestion-pagos/modal-registro/modal-registro.component';
+import { SegundaOpinionComponent } from './componentes/segunda-opinion/segunda-opinion.component';
+import { ModalDatosDeTramiteComponent } from './componentes/modales/modal-datos-de-tramite/modal-datos-de-tramite.component';
+import { ModalEvaluacionTramiteComponent } from './componentes/modales/modal-evaluacion-tramite/modal-evaluacion-tramite.component';
+import { ModalConformidadSegundaOpinionComponent } from './componentes/modales/modal-conformidad-segunda-opinion/modal-conformidad-segunda-opinion.component';
 
 const vuce2Modules = [
   Vuce2LibTabStateModule,
@@ -160,7 +164,11 @@ const vuce2Modules = [
     ModalInformesTecnicosVistaPreviaComponent,
     ModalInformesTecnicosPasarFirmarComponent,
     BandejaDePagosComponent,
-    ModalRegistroComponent
+    ModalRegistroComponent,
+    SegundaOpinionComponent,
+    ModalDatosDeTramiteComponent,
+    ModalEvaluacionTramiteComponent,
+    ModalConformidadSegundaOpinionComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,370 @@
+<div class="page">
+    <div class="sidebar">
+        a
+    </div>
+    <div class="content">
+
+        <vuce2-lib-breadcrumb
+            [items]="breadCrumbs">
+        </vuce2-lib-breadcrumb>
+        <h1 class="mt-5 mb-5 d-flex"> 
+        <button (click)="return()" class="mr-2" mat-flat-button color="warn">
+            <mat-icon>keyboard_backspace</mat-icon>
+        </button>Proceso de Evaluación</h1>
+
+        <div class="card p-4">
+            <h3>Datos del Trámite</h3>
+            <div class="row">
+                <div class="col-sm row">
+                    <div class="col">
+                        <p>Número de Trámite:</p>
+                        <p>Número de Expendiente:</p>
+                    </div>
+                    <div class="col-7">
+                        <p class="text-muted">2022002368</p>
+                        <p class="text-muted">051</p>
+                    </div>
+                </div>
+                <div class="col-sm row">
+                    <div class="col">
+                        <p>Fecha del Trámite:</p>
+                        <p>Estado:</p>
+                    </div>
+                    <div class="col-7">
+                        <p class="text-muted">21/03/2022 15:41</p>
+                        <p class="text-muted">Pendiente</p>
+                    </div>
+                </div>
+                <div class="col-sm row">
+                    <div class="col-sm">
+                        <p>Evaluador:</p>
+                        <p>Canal:</p>
+                    </div>
+                    <div class="col-7">
+                        <p class="evaluador">MP-EVALUADOR SERFOR</p>
+                        <p class="canal">
+                            <span class="material-icons">
+                                info
+                            </span> 
+                            Atención: Trámite con canal rojo
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 mb-5">
+            <vuce2-lib-radio-state  [tabList]="tabsRadius"></vuce2-lib-radio-state>
+        </div>
+
+        
+
+        <div class="d-flex justify-content-end mt-5"> 
+            <h5 class="mt-4 mb-4" style="color: red">
+                <button mat-flat-button color="warn">
+                    <span class="material-icons">
+                        open_in_browser
+                    </span> 
+                </button> Solicitar Opinión
+            </h5>
+        </div>
+
+        <mat-accordion class="example-headers-align" multi>
+
+            <vuce2-lib-accordion
+              [title]="'Datos Solicitud'"
+              [status]="'Observado'"
+              [image]="imageAccordion"
+            >
+              <ng-template vuce2LibContentTemplate="contentTemplate">
+                <h4>Datos Personales</h4>
+                <div class="row">
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Tipo de Documento:</p>
+                            <p>Actividad:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">RUC</p>
+                            <p class="text-muted">Activo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Número de Documento:</p>
+                            <p>Razón Social:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">20945679213</p>
+                            <p class="text-muted">FARMA INDUSTRIAS S.A.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h4>Datos de Contacto</h4>
+                <div class="row">
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Tipo de Documento:</p>
+                            <p>Referencia:</p>
+                            <p>Celular:</p>
+                            <p>Fax:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">Lima</p>
+                            <p class="text-muted">Por el supermercado metro</p>
+                            <p class="text-muted">986723123</p>
+                            <p class="text-muted">000-000-00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Distrito:</p>
+                            <p>Domicilio Legal:</p>
+                            <p>Teléfono:</p>
+                            <p>Correo Electrónico:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">Lima</p>
+                            <p class="text-muted">Av. Los Portales</p>
+                            <p class="text-muted">01-2349853</p>
+                            <p class="text-muted">Farmaindustgrial@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h4>Representante Legal</h4>
+                <div class="row">
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Apellidos:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">Flores Castellano</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Nombres:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">Arturo Daniel</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <vuce2-lib-check-box
+                        [textValue]="'Solicitar Opinión'"
+                    >
+                    </vuce2-lib-check-box>
+                    <p class="message"><span class="material-icons">info</span> Seleccione si se necesita la opinión de otro evaluador.</p>
+                </div>
+
+              </ng-template>
+            </vuce2-lib-accordion>
+
+            <vuce2-lib-accordion
+              [title]="'Detalles'"
+              [status]="'Observado'"
+              [image]="imageAccordion"
+            >
+              <ng-template vuce2LibContentTemplate="contentTemplate">
+                <h4>Datos de Producto</h4>
+                <div class="row">
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Tipo de Trámite:</p>
+                            <p>Es CITES:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">Importación</p>
+                            <p class="text-muted">Activo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Tipo de Producto:</p>
+                            <p>Consignatario:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">Fauna</p>
+                            <p class="text-muted">Otros</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h4>Direcciones</h4>
+                <div class="row">
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Lugar de Deposito:</p>
+                            <p>País de Destino Final:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">Miraflores</p>
+                            <p class="text-muted">Perú</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row w-50">
+                        <div class="col-md">
+                            <p>Dirección:</p>
+                            <p>Fecha de Embarque:</p>
+                        </div>
+                        <div class="col-md">
+                            <p class="text-muted">Miraflores</p>
+                            <p class="text-muted">12/09/22</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <vuce2-lib-check-box
+                        [textValue]="'Solicitar Opinión'"
+                    >
+                    </vuce2-lib-check-box>
+                    <p class="message"><span class="material-icons">info</span> Seleccione si se necesita la opinión de otro evaluador.</p>
+                </div>
+              </ng-template>
+            </vuce2-lib-accordion>
+            
+            <vuce2-lib-accordion
+              [title]="'Productos'"
+              [status]="'Observado'"
+              [image]="imageAccordion"
+            >
+              <ng-template vuce2LibContentTemplate="contentTemplate">
+
+                <vuce2-lib-grid 
+                    [options]="options" 
+                    [columns]="columns" 
+                    [datasource]="datasource" 
+                    [paging]="paging"
+                    [borderHeader]="false"
+                    (onRefresh)="handlerRefresh($event)">
+
+                    <ng-template vuce2LibGridCellTemplate="acciones" let-data='data' let-row='row'>
+                        <span (click)="openModal()" style="color: #df4c47;" class="material-icons" >
+                            find_in_page
+                        </span>
+                    </ng-template>
+                    <ng-template vuce2LibGridCellTemplate="segunda" let-data='data' let-row='row'>
+                        <span class="material-icons" >
+                            cloud_download
+                        </span>
+                    </ng-template>
+
+                    <ng-template vuce2LibGridCellTemplate="estado" let-data='data' let-row='row'>
+                        <p class="m-0">
+                            <button [ngClass]="{
+                            'transmitir': row.estado === 'Pendiente',
+                            'aprobado': row.estado === 'Escrito Aprobado',
+                            'rechazado': row.estado === 'Escrito Rechazado'
+                            }"
+                            class="state">
+                                    {{row.estado}}
+                            </button>
+                        </p>
+                    </ng-template>
+                </vuce2-lib-grid>
+
+              </ng-template>
+            </vuce2-lib-accordion>
+           
+            <vuce2-lib-accordion
+              [title]="'Guia de Transporte o saldo'"
+              [status]="'Pendiente'"
+              [image]="imageAccordion"
+            >
+              <ng-template vuce2LibContentTemplate="contentTemplate">
+
+                <vuce2-lib-grid 
+                    [options]="options" 
+                    [columns]="columns" 
+                    [datasource]="datasource" 
+                    [paging]="paging"
+                    [borderHeader]="false"
+                    (onRefresh)="handlerRefresh($event)">
+
+                    <ng-template vuce2LibGridCellTemplate="acciones" let-data='data' let-row='row'>
+                        <span (click)="openModal()" style="color: #df4c47;" class="material-icons" >
+                            find_in_page
+                        </span>
+                    </ng-template>
+                    <ng-template vuce2LibGridCellTemplate="segunda" let-data='data' let-row='row'>
+                        <span class="material-icons" >
+                            cloud_download
+                        </span>
+                    </ng-template>
+
+                    <ng-template vuce2LibGridCellTemplate="estado" let-data='data' let-row='row'>
+                        <p class="m-0">
+                            <button [ngClass]="{
+                            'transmitir': row.estado === 'Pendiente',
+                            'aprobado': row.estado === 'Escrito Aprobado',
+                            'rechazado': row.estado === 'Escrito Rechazado'
+                            }"
+                            class="state">
+                                    {{row.estado}}
+                            </button>
+                        </p>
+                    </ng-template>
+                </vuce2-lib-grid>
+
+              </ng-template>
+            </vuce2-lib-accordion>
+            
+            <vuce2-lib-accordion
+              [title]="'Requisitos Adjuntos'"
+              [status]="'Pendiente'"
+              [image]="imageAccordion"
+            >
+              <ng-template vuce2LibContentTemplate="contentTemplate">
+
+                <vuce2-lib-grid 
+                    [options]="options" 
+                    [columns]="columns" 
+                    [datasource]="datasource" 
+                    [paging]="paging"
+                    [borderHeader]="false"
+                    (onRefresh)="handlerRefresh($event)">
+
+                    <ng-template vuce2LibGridCellTemplate="acciones" let-data='data' let-row='row'>
+                        <span (click)="openModal()" style="color: #df4c47;" class="material-icons" >
+                            find_in_page
+                        </span>
+                    </ng-template>
+                    <ng-template vuce2LibGridCellTemplate="segunda" let-data='data' let-row='row'>
+                        <span class="material-icons" >
+                            cloud_download
+                        </span>
+                    </ng-template>
+
+                    <ng-template vuce2LibGridCellTemplate="estado" let-data='data' let-row='row'>
+                        <p class="m-0">
+                            <button [ngClass]="{
+                            'transmitir': row.estado === 'Pendiente',
+                            'aprobado': row.estado === 'Escrito Aprobado',
+                            'rechazado': row.estado === 'Escrito Rechazado'
+                            }"
+                            class="state">
+                                    {{row.estado}}
+                            </button>
+                        </p>
+                    </ng-template>
+                </vuce2-lib-grid>
+
+              </ng-template>
+            </vuce2-lib-accordion>
+        
+        </mat-accordion>
+
+        <vuce2-lib-footer></vuce2-lib-footer>
+  
+    </div>
+</div>

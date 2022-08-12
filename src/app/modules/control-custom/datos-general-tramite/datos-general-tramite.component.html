@@ -42,7 +42,12 @@
                     </div>
                     <div class="col-7">
                         <p class="evaluador">MP-EVALUADOR SERFOR</p>
-                        <p>Atención: Trámite con canal rojo</p>
+                        <p class="canal">
+                            <span class="material-icons">
+                                info
+                            </span> 
+                            Atención: Trámite con canal rojo
+                        </p>
                     </div>
                 </div>
             </div>
@@ -58,9 +63,7 @@
         </div>
 
         <div class="d-flex justify-content-center mt-5">
-            <button class="btn_evaluacion">
-                Evaluar Trámite
-            </button>
+            <vuce2-lib-button-primary (click)="goToDetail()" class="btnModal__btn" [texto]="'Evaluar Trámite'" [largo]="'small'"></vuce2-lib-button-primary>
         </div>
 
         <vuce2-lib-footer></vuce2-lib-footer>

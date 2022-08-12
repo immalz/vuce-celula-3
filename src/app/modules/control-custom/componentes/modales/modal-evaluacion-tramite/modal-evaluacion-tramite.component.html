@@ -1,0 +1,21 @@
+<div class="full">
+    <h1>Evaluación del Trámite</h1>
+    <img src="assets/image/consultas.png">
+    <p>Usted esta realizando la evaluación del</p>
+    <p class="redtext mb-1">Trámite 2022202357</p>
+    <p>Desea utilizar el checklist</p>
+
+    <vuce2-lib-radio-button
+          [item]="check"
+          formControlName="check"
+          [control]="checks"
+          (mostrarEvent)="onEvent($event)"
+        >
+        </vuce2-lib-radio-button>
+
+    <div class="btnModal mt-3">
+        <vuce2-lib-button-secundary (click)="close()" class="btnModal__btn" [texto]="'Cancelar'" [largo]="'small'">
+        </vuce2-lib-button-secundary>
+        <vuce2-lib-button-primary (click)="navigate()" class="btnModal__btn" [texto]="'Continuar'" [largo]="'small'"></vuce2-lib-button-primary>
+    </div>
+</div>

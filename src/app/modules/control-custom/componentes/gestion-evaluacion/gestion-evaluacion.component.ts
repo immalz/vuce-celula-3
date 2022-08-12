@@ -1,3 +1,5 @@
+import { ModalDatosDeTramiteComponent } from './../modales/modal-datos-de-tramite/modal-datos-de-tramite.component';
+import { MatDialog } from '@angular/material/dialog';
 import { TableDataSource } from 'projects/vuce2-lib-custom/src/public-api';
 import { Observable, from as fromPromise } from 'rxjs';
 import { DatasourceResult } from 'projects/vuce2-lib-custom/src/public-api';
@@ -36,7 +38,8 @@ export class GestionEvaluacionComponent implements OnInit {
   }]
 
   constructor(
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -66,7 +69,17 @@ export class GestionEvaluacionComponent implements OnInit {
   }
 
   goToDetail(row: any): void {
-    this.router.navigate(['/datos-generales']);
+    const dialogRef = this.dialog.open(ModalDatosDeTramiteComponent, {
+      width: '450px',
+      data: row
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      if(result) {
+      this.router.navigate(['/datos-generales']);
+      }
+    });
   }
 
   public columns: TableColumn[] = [
@@ -155,7 +168,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite por evaluar",
                 "Acciones": "",
             },
             {
@@ -167,7 +180,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Asignado",
+                "Estado": "Trámite por evaluar",
                 "Acciones": "",
             },
             {
@@ -179,7 +192,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite por evaluar",
                 "Acciones": "",
             },
             {
@@ -191,7 +204,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite en proceso de evaluación",
                 "Acciones": "",
             },
             {
@@ -203,7 +216,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite en proceso de inspección y finalizada",
                 "Acciones": "",
             },
             {
@@ -215,7 +228,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Asignado",
+                "Estado": "Trámite en proceso de evaluación",
                 "Acciones": "",
             },
             {
@@ -227,7 +240,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite en proceso de evaluación",
                 "Acciones": "",
             },
             {
@@ -239,7 +252,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite con evaluación finalizada",
                 "Acciones": "",
             },
             {
@@ -251,7 +264,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Tramite con correción de documentos",
                 "Acciones": "",
             },
             {
@@ -263,7 +276,7 @@ export class GestionEvaluacionComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite con evaluación finalizada",
                 "Acciones": "",
             }
         ]

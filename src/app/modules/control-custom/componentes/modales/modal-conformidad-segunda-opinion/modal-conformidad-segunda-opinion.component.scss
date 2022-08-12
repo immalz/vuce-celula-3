@@ -1,0 +1,45 @@
+.full {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .full__title {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .full__title h2 {
+        width: 50%;
+    }
+
+    .full__btns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .full__content,
+    .full__checkbox{
+        width: 100%;
+    }
+
+    .full__checkbox p {
+        width: auto;
+    }
+
+    .full__btns .btnModal__btn {
+        width: 150px;
+    }
+
+    .message {
+        background-color: #b8ddff;
+        color: #5187e3;
+        width: auto;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border-radius: 10px;
+    }
+}
