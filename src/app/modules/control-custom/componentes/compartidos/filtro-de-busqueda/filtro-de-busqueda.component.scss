@@ -1,0 +1,19 @@
+.filter_search {
+    height: 150px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #000;
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.mat-raised-button {
+    width: 85px;
+    height: 45px;;
+}
+.mat-stroked-button {
+    width: 45px;
+    height: 45px;
+    border: 1px solid red;
+}

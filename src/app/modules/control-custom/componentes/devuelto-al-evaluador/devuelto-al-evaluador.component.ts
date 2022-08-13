@@ -1,3 +1,5 @@
+import { ModalDatosDeTramiteComponent } from './../modales/modal-datos-de-tramite/modal-datos-de-tramite.component';
+import { MatDialog } from '@angular/material/dialog';
 import { TableDataSource } from 'projects/vuce2-lib-custom/src/public-api';
 import { Observable, from as fromPromise } from 'rxjs';
 import { DatasourceResult } from 'projects/vuce2-lib-custom/src/public-api';
@@ -10,15 +12,20 @@ import { FormGroup } from '@angular/forms';
 import { TableColumn } from 'projects/vuce2-lib-custom/src/public-api';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 @Component({
-  selector: 'app-documento-resolutivo',
-  templateUrl: './documento-resolutivo.component.html',
-  styleUrls: ['./documento-resolutivo.component.scss']
+  selector: 'app-devuelto-al-evaluador',
+  templateUrl: './devuelto-al-evaluador.component.html',
+  styleUrls: ['./devuelto-al-evaluador.component.scss']
 })
-export class DocumentoResolutivoComponent implements OnInit {
+export class DevueltoAlEvaluadorComponent implements OnInit {
 
   formFilter: FormGroup;
-  showPreview: boolean = false;
+  showMoreFilter: boolean = false;
+
+  ngOnInit() {
+  }
+
   breadCrumbs = [
   {
     id: 2,
@@ -28,29 +35,25 @@ export class DocumentoResolutivoComponent implements OnInit {
   },
   {
     id: 3,
-    texto: 'Trámites en Proceso de Evaluación',
+    texto: 'Trámites Devueltas al Evaluador',
     url: '#',
     selected: true
   }]
 
   constructor(
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
-  ngOnInit(): void {
-    this.crearFormGroup()
+
+  changeTab(e): any {
+
   }
 
-  crearFormGroup(): void {
-    this.formFilter = new FormGroup({
-      modos: new FormControl(''), 
-    })
-  }
-
-
-  handlerChange(e: any) {
-    console.log('e >>', e);
-  }
+  tabs: any[] = [
+    { caption: 'Tramites Regulares', disabled: false, route: '' },
+    { caption: 'Recursos Administrativos', disabled: false, route: 'informes' },
+  ];
 
   handlerRefresh(e){
     if(e){
@@ -59,7 +62,17 @@ export class DocumentoResolutivoComponent implements OnInit {
   }
 
   goToDetail(row: any): void {
-    this.router.navigate(['/datos-generales']);
+    const dialogRef = this.dialog.open(ModalDatosDeTramiteComponent, {
+      width: '450px',
+      data: row
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      if(result) {
+      this.router.navigate(['/datos-generales']);
+      }
+    });
   }
 
   public columns: TableColumn[] = [
@@ -89,27 +102,6 @@ export class DocumentoResolutivoComponent implements OnInit {
     }
   ];
 
-  tabs: any[] = [
-    { caption: 'Tramites Regulares', disabled: false, route: '' },
-    { caption: 'Recursos Administrativos', disabled: false, route: 'escritos' },
-  ];
-
-  get formato() {
-    return this.formFilter.controls['formato'];
-  }
-  get estado() {
-    return this.formFilter.controls['estado'];
-  }
-  get fecha() {
-    return this.formFilter.controls['fecha'];
-  }
-  get modo() {
-    return this.formFilter.controls['modos'];
-  }
-  get validar() {
-    return this.formFilter.controls['validar'];
-  }
-  
   public options: TableOptions = {
     className: '',//['table-striped'],
     language: "es",
@@ -119,15 +111,6 @@ export class DocumentoResolutivoComponent implements OnInit {
   public datasource: TableDataSource = (request: DatasourceParameters): Observable<DatasourceResult> => {
   console.log('request',request);
   return this.contentGuia();
-  }
-
-  changeTab(tab): any {
-    console.log(tab)
-  }
-
-  selectMode(e: any): void {
-    console.log(e);
-    e === 2 ? this.showPreview = true : this.showPreview = false;
   }
 
   contentGuia(){
@@ -146,7 +129,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámites en Subsanación",
                 "Acciones": "",
             },
             {
@@ -158,7 +141,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Asignado",
+                "Estado": "Trámites en Subsanación",
                 "Acciones": "",
             },
             {
@@ -170,7 +153,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámites en Subsanación",
                 "Acciones": "",
             },
             {
@@ -182,7 +165,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite en proceso de evaluación",
                 "Acciones": "",
             },
             {
@@ -194,7 +177,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite en proceso de inspección y finalizada",
                 "Acciones": "",
             },
             {
@@ -206,7 +189,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Asignado",
+                "Estado": "Trámite en proceso de evaluación",
                 "Acciones": "",
             },
             {
@@ -218,7 +201,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite en proceso de evaluación",
                 "Acciones": "",
             },
             {
@@ -230,7 +213,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite con evaluación finalizada",
                 "Acciones": "",
             },
             {
@@ -242,7 +225,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Tramite con correción de documentos",
                 "Acciones": "",
             },
             {
@@ -254,7 +237,7 @@ export class DocumentoResolutivoComponent implements OnInit {
                 "solicitante": "Farma Industria SAC",
                 "inicio": "25/11/2022 09:00am",
                 "diasRestantes": "2 dias",
-                "Estado": "Pendiente",
+                "Estado": "Trámite con evaluación finalizada",
                 "Acciones": "",
             }
         ]
@@ -272,31 +255,5 @@ export class DocumentoResolutivoComponent implements OnInit {
     showPaging: true,
     showItemsPerPage: false
   }
-
-  public modos: any = [
-    { 
-      id: 1,
-      text: 'Vista Lista',
-    },
-    { 
-      id:2,
-      text: 'Vista Detalle',
-    },
-  ]
-
-  public estados: any = [
-    { 
-      id: 1,
-      text: 'Estado Gestion de la evaluacion VUCE 2.0',
-    },
-    { 
-      id:2,
-      text: 'Estado Gestion de la evaluacion VUCE 2.0',
-    },
-    { 
-      id:3,
-      text: 'Estado Gestion de la evaluacion VUCE 2.0',
-    },
-  ]
 
 }

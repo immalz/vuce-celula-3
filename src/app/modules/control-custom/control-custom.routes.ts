@@ -1,3 +1,4 @@
+import { DevueltoAlEvaluadorComponent } from './componentes/devuelto-al-evaluador/devuelto-al-evaluador.component';
 import { SegundaOpinionComponent } from './componentes/segunda-opinion/segunda-opinion.component';
 
 import { Routes } from '@angular/router';
@@ -82,6 +83,11 @@ export const APP_CUSTOM_ROUTES: Routes = [
   {
     path: 'subsanacion',
     component: SubsanacionComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'devuelto-al-evaluador',
+    component: DevueltoAlEvaluadorComponent,
     pathMatch: 'full',
   },
   {

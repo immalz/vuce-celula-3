@@ -27,47 +27,7 @@
             <vuce2-lib-tab (tabEvent)="changeTab($event)" [contentSource]="tabs"></vuce2-lib-tab>
         </div>
 
-        <div class="accordion-item mt-5 mb-5">
-            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
-                Filtros de Búsqueda
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"  aria-labelledby="panelsStayOpen-headingThree">
-              <form [formGroup]="formFilter" class="accordion-body">
-                <div class="row" >
-                    <vuce2-lib-input-text
-                        class="col-sm"
-                        formControlName="formato"
-                        [placeholder]="'Formato, Nro. Trámite o solicitante'"
-                        [control]="formato"
-                        [etiqueta]="'formato'"
-                        [sufijo]="'search'"
-                    ></vuce2-lib-input-text>
-                    <vuce2-lib-select
-                        [items]="estados"
-                        class="col-sm"
-                        formControlName="estado"
-                        [etiqueta]="'Estado'"
-                        [control]="estado"
-                        (change)="handlerChange($event)"
-                    ></vuce2-lib-select>
-                    <vuce2-lib-input-calendar
-                        formControlName="fecha"
-                        class="col-sm"
-                        [etiqueta]="'Fecha'"
-                        [control]="fecha"
-                    ></vuce2-lib-input-calendar>
-                    <div class="d-flex gap-2 col-sm">
-                        <button mat-raised-button color="warn">
-                            Buscar
-                        </button>
-                       
-                    </div>
-                </div>
-              </form>
-            </div>
-        </div>
+        <app-filtro-de-busqueda></app-filtro-de-busqueda>
 
         <!---TABLA--->
 

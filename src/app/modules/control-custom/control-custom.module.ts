@@ -86,6 +86,9 @@ import { ModalEvaluacionTramiteComponent } from './componentes/modales/modal-eva
 import { ModalConformidadSegundaOpinionComponent } from './componentes/modales/modal-conformidad-segunda-opinion/modal-conformidad-segunda-opinion.component';
 import { BandejaDePagosEntidadComponent } from './componentes/gestion-pagos/bandeja-de-pagos-entidad/bandeja-de-pagos-entidad.component';
 import { ModalBandejaDePagosEntidadDescargaComponent } from './componentes/modales/modal-bandeja-de-pagos-entidad-descarga/modal-bandeja-de-pagos-entidad-descarga.component';
+import { DevueltoAlEvaluadorComponent } from './componentes/devuelto-al-evaluador/devuelto-al-evaluador.component';
+import { FiltroDeBusquedaComponent } from './componentes/compartidos/filtro-de-busqueda/filtro-de-busqueda.component';
+import { FiltroDeBusquedaSimplicadoComponent } from './componentes/compartidos/filtro-de-busqueda-simplicado/filtro-de-busqueda-simplicado.component';
 
 const vuce2Modules = [
   Vuce2LibTabStateModule,
@@ -172,7 +175,10 @@ const vuce2Modules = [
     ModalEvaluacionTramiteComponent,
     ModalConformidadSegundaOpinionComponent,
     BandejaDePagosEntidadComponent,
-    ModalBandejaDePagosEntidadDescargaComponent
+    ModalBandejaDePagosEntidadDescargaComponent,
+    DevueltoAlEvaluadorComponent,
+    FiltroDeBusquedaComponent,
+    FiltroDeBusquedaSimplicadoComponent
   ],
   imports: [
     CommonModule,
