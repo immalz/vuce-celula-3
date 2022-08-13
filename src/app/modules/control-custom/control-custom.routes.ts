@@ -28,6 +28,7 @@ import { InformeComponent } from './componentes/borrador-informe/tab-components/
 import { SubsanacionComponent } from './componentes/subsanacion/subsanacion.component';
 import { BandejaDePagosComponent } from './componentes/gestion-pagos/bandeja-de-pagos/bandeja-de-pagos.component';
 import { BandejaDePagosEntidadComponent } from './componentes/gestion-pagos/bandeja-de-pagos-entidad/bandeja-de-pagos-entidad.component';
+import { BandejaDeLiquidacionesEntidadesComponent } from './componentes/gestion-pagos/bandeja-de-liquidaciones-entidades/bandeja-de-liquidaciones-entidades.component';
 
 export const APP_CUSTOM_ROUTES: Routes = [
   {
@@ -98,6 +99,11 @@ export const APP_CUSTOM_ROUTES: Routes = [
   {
     path: 'bandeja-de-pago-entidad',
     component: BandejaDePagosEntidadComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'bandeja-de-liquidaciones-entidad',
+    component: BandejaDeLiquidacionesEntidadesComponent,
     pathMatch: 'full',
   },
   {
