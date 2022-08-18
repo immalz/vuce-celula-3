@@ -89,6 +89,10 @@ export class DatosGeneralTramiteComponent implements OnInit {
     });
   }
 
+  return(): any {
+    this.router.navigate([`/evaluacion`])
+  }
+
   changeTab(tab): any {
     const caption = this.tabs.find(element => element.caption === tab);
 

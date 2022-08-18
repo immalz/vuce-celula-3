@@ -1,3 +1,4 @@
+import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,14 +11,16 @@ export class ModalConformidadSegundaOpinionComponent implements OnInit {
 
   modalForm;
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<ModalConformidadSegundaOpinionComponent>,
+  ) { }
 
   ngOnInit(): void {
     this.crearFormulario();
   }
 
   close(): any {
-
+    this.dialogRef.close();
   }
 
   navigate(): any {
